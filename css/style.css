@@ -1,0 +1,181 @@
+/*
+Autor: Juan Vidal
+Camada: 14365
+*/
+
+.navbar {
+    transition: all 0.4s;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0.89; 
+    filter:(opacity=89);      
+    text-align: center;
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar-brand {
+    color: rgba(71, 7, 90, 0.89);
+}
+
+.navbar-brand:hover {
+    color: rgba(#2e0049, 1);
+}
+
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: rgba(67, 10, 158, 0.7);
+    text-decoration: none;
+}
+
+.navbar .navbar-brand {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* Change navbar styling on scroll */
+.navbar.active {
+    color: rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar.active .nav-link {
+    color: #555;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+    color: #555;
+    text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+    color: #555;
+}
+
+
+/* Change navbar styling on small viewports */
+@media (max-width: 991.98px) {
+    .navbar {
+        background: #fff;
+    }
+
+    .navbar .navbar-brand,
+    .navbar .nav-link {
+        color: #555;
+    }
+}
+html {
+    color: white;
+    background-color: black;
+
+}
+
+body {
+    /* IE 10-11 didn't like using min-height */
+    height: 100%;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 19.89px;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    color: white;
+    background-color: rgba(26, 26, 26, 0.89);
+    background-image: linear-gradient(135deg, #160129 0%, #2e0049 100%);
+
+}
+
+.jumbotron {
+    background-color: rgba(26, 26, 26, 0.78);
+}
+
+.footer {
+    font-size: 0.78em;
+}
+
+.footer img {
+    vertical-align: left;
+    height: 1.3em;
+}
+
+.colPoweredBy {
+    padding-right: 5px;
+    font-style: italic;
+}
+
+.footerLogo {
+    padding-top: 2px;
+    padding-left: 0px;
+}
+
+.LogoCoderHousewrapper {
+    height: 1.3em;
+    width: auto;
+    background-position: left left;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.topPagina {
+    background-image: url("../img/js.back.2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 25%;
+    opacity: 0.78;
+    filter: blur(2.6px);
+    -webkit-filter: blur(2.6px);
+}
+
+.bgTopText {
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.52);
+    /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    /*border: 3px solid #f1f1f1;*/
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    /*z-index: 2;*/
+    width: 89%;
+    padding: 26px;
+    text-align: center;
+}
+
+.menuOpciones {
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+h1 {
+    margin-top: 3em;
+    text-align: center;
+    font-size: 26px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 19.89px;
+}
+
+.button {
+    border-radius: 13px;
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 4px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px 3px;
+    transition-duration: 0.39s;
+    cursor: pointer;
+}
