@@ -3,12 +3,13 @@
 
 <head>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;400&display=swap" rel="stylesheet">
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap-->
+
+    <!-- Includes -->
+    <!-- Bootstrap Support -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -17,14 +18,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <title>JS:Clase #2</title>
-
+    <!-- Main CSS -->
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://core.coderhouse.com/ch-ui-kit-v8.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
+    <!-- FavIcon Support -->
     <!-- Browsers -->
     <link rel="icon" href="../favicon.ico">
     <link rel="icon" sizes="16x16" href="../favicon-16x16.png">
@@ -39,7 +36,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <!-- Windows 8 IE 10 -->
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="../favicon.ico">
+    <meta name="msapplication-TileImage" content="favicon.ico">
+
+    <title>JS:Clase #2</title>
 </head>
 
 <body>
@@ -74,7 +73,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="../Clase1/clase1.html">Clase 1</a>
-                            <a class="dropdown-item active" href="Clase2/clase2.html">Clase 2</a>
+                            <a class="dropdown-item active" href="clase2.html">Clase 2</a>
                             <a class="dropdown-item" href="#">Clase ...</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Workshop 1</a>
@@ -107,8 +106,9 @@
                 </script>
             </p>
 
-            <h1>Criterios de vacunacion COVID-19</h1>
+            <h1><i class="fas fa-syringe"></i>&nbsp;Criterios de vacunación COVID-19</h1>
             <h6>
+                &nbsp;
                 <ol style="text-align: justify;">
                     <li>Personal de establecimientos de salud públicos y privados (de manera escalonada según el riesgo
                         de
@@ -138,13 +138,361 @@
             </h6>
 
             <div class="jumbotron text-center" style="margin-bottom:13px">
-                <div class="row menuOpciones"><button type="button" class="btn btn-primary btn-block"
-                        onclick="fBotonCriterios()"><svg xmlns="http://www.w3.org/2000/svg" width="26"
-                            height="26" fill="currentColor" class="bi bi-list-check" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z" />
-                        </svg> &nbsp;Hacer Test
-                    </button></div>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" onclick="fBotonCriterios()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                        class="bi bi-list-check" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z" />
+                    </svg> &nbsp;Hacer Test
+                </button>
+                <!-- Modal0 -->
+                <div class="modal fade" id="modal0" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Evaluación de criterios</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    <div class="row">
+                                        <div class="col-sm-2 text-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="52" height="52" fill="currentColor"
+                                                class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z" />
+                                                <path
+                                                    d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                            </svg></i></div>
+                                        <div class="col-sm-10">
+                                            <h6>
+                                                <p>
+                                                    ¿Es usted personal de establecimientos de salud públicos y privados
+                                                    (de manera escalonada según el riesgo de su actividad; por ejemplo,
+                                                    quienes trabajan en unidades terapia intensiva o en guardias tienen
+                                                    una actividad más expuesta)?
+                                                </p>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" onclick="funcEsMedico(true)"
+                                    data-dismiss="modal0"><i class="fas fa-check"></i>&nbsp; SI </button>
+                                <button type="button" class="btn btn-danger" onclick="funcEsMedico(false)"
+                                    data-dismiss="modal0"><i class="fas fa-check"></i>&nbsp; NO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal1 -->
+                <div class="modal fade" id="modal1" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true" style="width: 89%">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class=" modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Evaluación de criterios</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    <div class="row">
+                                        <div class="col-sm-2 text-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="52" height="52" fill="currentColor"
+                                                class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z" />
+                                                <path
+                                                    d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                            </svg></i></div>
+                                        <div class="col-sm-10">
+                                            <h6>
+                                                <form>
+                                                    <div class="form-group">
+                                                        <p>Por favor, ingrese su nombre, apellido y edad.</p>
+                                                        <div class="row mx-auto">
+                                                            <label for="Nombre">Nombre</label>
+                                                            <input type="text" class="form-control" placeholder="Nombre"
+                                                                id="Nombre">
+                                                            <small id="NombreHelp" class="form-text text-muted"></small>
+                                                        </div>
+                                                        &nbsp;
+                                                        <div class="row mx-auto">
+                                                            <label for="Apellido">Apellido</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Apellido" id="Apellido">
+                                                            <small id="ApellidoHelp"
+                                                                class="form-text text-muted"></small>
+                                                        </div>
+                                                        &nbsp;
+                                                        <div class="row">
+                                                            <div class="col-3">
+                                                                <label for="age">Edad</label>
+                                                                <input type="number" class="form-control" size="4"
+                                                                    name="age" min="18" required id="Edad">
+
+                                                            </div>
+                                                            <small id="EdadHelp" class="form-text text-muted"></small>
+                                                        </div>
+
+                                                    </div>
+                                                </form>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" onclick="funcNext()"
+                                    data-dismiss="modal1"></i>&nbsp; Siguiente <i
+                                        class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal2 -->
+                <div class="modal fade" id="modal2" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Evaluación de criterios</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    <div class="row">
+                                        <div class="col-sm-2 text-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="52" height="52" fill="currentColor"
+                                                class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z" />
+                                                <path
+                                                    d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                            </svg></i></div>
+                                        <div class="col-sm-10">
+                                            <h6>
+                                                <p>
+                                                    ¿Es usted personal de las Fuerzas Armadas, de Seguridad o de
+                                                    servicios
+                                                    penitenciarios?
+                                                </p>
+
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" onclick="funcEsFFAA(true)"
+                                    data-dismiss="modal2"><i class="fas fa-check"></i>&nbsp; SI </button>
+                                <button type="button" class="btn btn-danger" onclick="funcEsFFAA(false)"
+                                    data-dismiss="modal2"><i class="fas fa-check"></i>&nbsp; NO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal3 -->
+                <div class="modal fade" id="modal3" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Evaluación de criterios</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    <div class="row">
+                                        <div class="col-sm-2 text-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="52" height="52" fill="currentColor"
+                                                class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z" />
+                                                <path
+                                                    d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                            </svg></i></div>
+                                        <div class="col-sm-10">
+                                            <h6>
+                                                <p>
+                                                    ¿Tiene usted entre 18 y 59 años y presenta al menos alguno de los
+                                                    siguients factores de riesgo?
+                                                    <br>
+                                                    Se consideran "de riesgo":
+                                                    <br>
+                                                    <ul>
+                                                        <li>Personas diabéticas (insulinodependientes o no) </li>
+                                                        <li>Personas con obesidad grado 2 (índice de masa corporal -IMC-
+                                                            mayor a 35) y grado 3 (IMC mayor a 40)</li>
+                                                        <li>Personas con enfermedades cardiovasculares</li>
+                                                        <li>Personas con enfermedades renales</li>
+                                                        <li>Personas con enfermedades respiratorias crónicas</li>
+                                                    </ul>
+                                                </p>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" onclick="funcEsRiesgo(true)"
+                                    data-dismiss="modal3"><i class="fas fa-check"></i>&nbsp; SI </button>
+                                <button type="button" class="btn btn-danger" onclick="funcEsRiesgo(false)"
+                                    data-dismiss="modal3"><i class="fas fa-check"></i>&nbsp; NO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal4 -->
+                <div class="modal fade" id="modal4" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Evaluación de criterios</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    <div class="row">
+                                        <div class="col-sm-2 text-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="52" height="52" fill="currentColor"
+                                                class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z" />
+                                                <path
+                                                    d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                            </svg></i></div>
+                                        <div class="col-sm-10">
+                                            <h6>
+                                                <p>
+                                                    ¿Es usted personal docente y no docente de los niveles educativos
+                                                    inicial (jardín), primaria y secundaria)?
+                                                </p>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" onclick="funcEsDocente(true)"
+                                    data-dismiss="modal4"><i class="fas fa-check"></i>&nbsp; SI </button>
+                                <button type="button" class="btn btn-danger" onclick="funcEsDocente(false)"
+                                    data-dismiss="modal4"><i class="fas fa-check"></i>&nbsp; NO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal5 -->
+                <div class="modal fade" id="modal5" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Evaluación de criterios</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    <div class="row">
+                                        <div class="col-sm-2 text-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="52" height="52" fill="currentColor"
+                                                class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z" />
+                                                <path
+                                                    d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                            </svg></i></div>
+                                        <div class="col-sm-10">
+                                            <h6>
+                                                <p>
+                                                    ¿Pertenece usted a poblaciones consideradas estratégicas según
+                                                    definan las jurisdicciones? A saber:
+                                                    <ul>
+                                                        <li>habitantes de barrios populares</li>
+                                                        <li>personas en situación de calle</li>
+                                                        <li>pueblos originarios</li>
+                                                        <li>personas privadas de libertad</li>
+                                                        <li>migrantes</li>
+                                                    </ul>
+                                                </p>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" onclick="funcEsEstrategico(true)"
+                                    data-dismiss="modal5"><i class="fas fa-check"></i>&nbsp; SI </button>
+                                <button type="button" class="btn btn-danger" onclick="funcEsEstrategico(false)"
+                                    data-dismiss="modal5"><i class="fas fa-check"></i>&nbsp; NO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal6 -->
+                <div class="modal fade" id="modal6" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Evaluación de criterios - RESULTADOS
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    <div class="row">
+                                        <div class="col-sm-2 text-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="52" height="52" fill="currentColor"
+                                                class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z" />
+                                                <path
+                                                    d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                            </svg></i></div>
+                                        <div class="col-sm-10">
+                                            <h6>
+                                                <p id="resNombre"> </p>
+                                                <p>Ha completado el test satisfactoriamente.</p>
+                                                <br>
+                                                <p>Sus resultados son:</p>
+                                                <p id="resPrioritario"></p>
+                                                <p id="pResultados">
+                                                </p>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" onclick="fClearForm()"
+                                    data-dismiss="modal5"><i class="fa  fa-power-off"></i>&nbsp; Repetir test </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
             </div>
         </div>
 

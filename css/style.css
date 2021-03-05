@@ -1,8 +1,12 @@
 /*
-Autor: Juan Vidal
-Camada: 14365
+    Autor: Juan Vidal
+    Camada: 14365
 */
 
+/* Imports */
+@import url("fonts.css"); 
+
+/* Page Objects */
 .navbar {
     transition: all 0.4s;
     background-color: rgba(255, 255, 255, 0.5);
@@ -76,7 +80,7 @@ html {
 body {
     /* IE 10-11 didn't like using min-height */
     height: 100%;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif;
     font-size: 19.89px;
     display: flex;
     flex-wrap: wrap;
@@ -154,12 +158,14 @@ body {
 }
 
 h1 {
+    /*font-family: 'IBM Plex Sans';*/
     margin-top: 3em;
     text-align: center;
     font-size: 26px;
 }
 
 h2 {
+
     text-align: center;
     font-size: 19.89px;
 }
@@ -178,4 +184,24 @@ h2 {
     margin: 4px 3px;
     transition-duration: 0.39s;
     cursor: pointer;
+}
+.modal-dialog {
+    width: 100%;
+    height: 89%;
+  }
+  
+  .modal-content {
+    height: 78%;
+    border-radius: 0;
+  }
+
+.modal-title
+{
+    color: #031a95;
+    font-weight: bolder;
+}
+.modal-body
+{
+    color: #2e0049;
+    text-align: justify;
 }
