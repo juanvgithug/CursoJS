@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Includes -->
+    <!-- Bootstrap Support -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- FavIcon Support -->
+    <!-- Browsers -->
+    <link rel="icon" href="../favicon.ico">
+    <link rel="icon" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" sizes="32x32" href="../favicon.ico">
+    <link rel="icon" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" href="../android-chrome-512x512.png">
+    <!-- Android -->
+    <link rel="shortcut icon" sizes="196x196" href="../android-chrome-192x192.png">
+    <!-- iOS -->
+    <link rel="apple-touch-icon" sizes="120x120" href="../apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <!-- Windows 8 IE 10 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="favicon.ico">
+
+    <title>JS:Clase #2</title>
+</head>
+
+<body>
+
+    <!-- Navbar-->
+    <header class="header">
+
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+
+            <a class="navbar-brand" href="../index.html">
+                <img src="../img/1024px-Unofficial_JavaScript_logo_2.svg.png" width="30" height="30"
+                    class="d-inline-block align-top" alt="">
+                Curso Javascript
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse pl-5" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html"><i class="fa fa-home"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html"><i class="fas fa-info-circle">&nbsp</i> Acerca
+                            de...</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-university"></i> Clases
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="../Clase1/clase1.html">Clase 1</a>
+                            <a class="dropdown-item " href="../Clase2/clase2.html">Clase 2</a>
+                            <a class="dropdown-item active" href="clase3.html">Clase 3</a>
+                            <a class="dropdown-item" href="#">Clase ...</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Workshop 1</a>
+                            <a class="dropdown-item" href="#">Workshop 2</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline mx-auto" style="width: 390px;">
+                    <input class="form-control mr-sm-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"
+                            aria-hidden="true">&nbsp</i>Buscar</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- BODY -->
+        <div class="jumbotron text-center topPagina">
+        </div>
+        <div class="jumbotron text-center bgTopText" style="top: -5em;">
+            <h2>Curso JavaScript. Clase #3. Ciclos / Iteraciones</h1>
+        </div>
+
+        <div class="jumbotron text-center " style="margin-bottom:0; margin-top: -13em;">
+            <p>
+                <script>
+                    const TXTBIENVENIDO = "Bienvenido a la clase 2.";
+                    console.log(TXTBIENVENIDO);
+                </script>
+            </p>
+
+            <h1><svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" fill="currentColor"
+                    class="bi bi-diagram-2" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1zM3 11.5A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z" />
+                </svg>&nbsp;Ciclos + Iteraciones</h1>
+            <h6>
+                &nbsp;
+                A continuación se presentan 3 ejemplos, según lo sugerido para el desafío de este módulo
+            </h6>
+
+            <div class="jumbotron text-center"
+                style='margin-bottom:13px;background-image: url("/img/fibo-back.jpeg");height: 400px;background-size: cover;background-blend-mode: soft-light;margin-top: 39px; opacity: 89%;'>
+
+                <!-- Button trigger modal -->
+                <div class="row">
+                    <button type="button" class="btn btn-primary btn-block" onclick="fBotonSumarNumeros()"
+                        style="margin-bottom: 26px;opacity: 89%;">
+                        <span class="fa-stack">
+                            <!-- The icon that will wrap the number -->
+                            <span class="fa fa-circle-o fa-stack-2x"></span>
+                            <!-- a strong element with the custom content, in this case a number -->
+                            <strong class="fa-stack-1x">
+                                1
+                            </strong>
+                        </span>
+                        &nbsp;Primer ejemplo
+                    </button>
+                </div>
+
+
+                <div class="row">
+                    <button type="button" class="btn btn-primary btn-block" onclick="fBotonCriterios()"
+                        style="margin-bottom: 26px;opacity: 89%;">
+                        <span class="fa-stack">
+                            <!-- The icon that will wrap the number -->
+                            <span class="fa fa-circle-o fa-stack-2x"></span>
+                            <!-- a strong element with the custom content, in this case a number -->
+                            <strong class="fa-stack-1x">
+                                2
+                            </strong>
+                        </span>
+                        &nbsp;Segundo ejemplo
+                    </button>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-primary btn-block" onclick="fBotonCriterios()"
+                        style="margin-bottom: 26px;opacity: 89%;">
+                        <span class="fa-stack">
+                            <!-- The icon that will wrap the number -->
+                            <span class="fa fa-circle-o fa-stack-2x"></span>
+                            <!-- a strong element with the custom content, in this case a number -->
+                            <strong class="fa-stack-1x">
+                                3
+                            </strong>
+                        </span>
+                        &nbsp;Tercer ejemplo
+                    </button>
+                </div>
+            </div>
+
+
+
+            <!-- Modal0-->
+            <div class="modal fade" id="modal0" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true" style="width: 89%">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class=" modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Primer Ejemplo</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                <div class="row">
+                                    <div class="col-sm-2 text-center"><svg xmlns="http://www.w3.org/2000/svg" width="52"
+                                            height="52" fill="currentColor" class="bi bi-person-bounding-box"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z" />
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                        </svg></i></div>
+                                    <div class="col-sm-10">
+                                        <h6>
+                                            <form>
+                                                <div class="form-group">
+                                                    <p>Por favor, ingrese un número que será sumado a su elemento
+                                                        correspondiente en la sucesión de Fibonacci y la cantidad de
+                                                        repeticiones que desea ejecutar.</p>
+                                                    <div class="row mx-auto">
+                                                        <div class="col-3">
+                                                            <label for="Valor1">Número:</label>
+                                                            <input type="cantRep" class="form-control" size="4"
+                                                                name="Valor1" min="0" required id="Valor1">
+
+                                                        </div>
+                                                        <small id="Valor1Help" class="form-text text-muted"></small>
+                                                    </div>
+                                                    &nbsp;
+                                                    <div class="row mx-auto">
+                                                        <div class="col-3">
+                                                            <label for="age">Cant.Repeticiones:</label>
+                                                            <input type="cantRep" class="form-control" size="4"
+                                                                name="cantRep" min="0" required id="cantRep">
+
+                                                        </div>
+                                                        <small id="cantRepHelp" class="form-text text-muted"></small>
+                                                    </div>
+
+                                                </div>
+                                            </form>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="funcNext()"
+                                data-dismiss="modal0"></i>&nbsp;
+                                Calcular <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="jumbotron text-center footer" style="margin-bottom:0">
+        <div class="row">
+            <div class="col">
+                <p><i class="fa fa-copyright" aria-hidden="true"></i>
+                    Juan Vidal - Todos los derechos reservados.</p>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col text-right colPoweredBy">
+                        Powered by
+                    </div>
+                    <div class="col text-left footerLogo">
+                        <div class="LogoCoderHousewrapper"
+                            style="background-image:url('../img/coderhouse_logo_black.jpg');"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/claseVidal.js"></script>
+    <script src="js/script.js"></script>
+    </div>
+</body>
+
+</html>
