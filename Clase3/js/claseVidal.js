@@ -266,11 +266,11 @@ function funcClearEjemplo2() {
 
     const button3 = document.getElementById('btnMenu2');
     let strTemp = "<span class=\"fa-stack\"> <span class=\"fa fa-circle-o fa-stack-2x\"></span><strong class=\"fa-stack-1x\">2 </strong> </span>        &nbsp;Segundo ejemplo";
-    button3.innerHTML = strTemp ;
+    button3.innerHTML = strTemp;
 
     const button = document.getElementById('btnEjemplo2');
     button.disabled = true;
-    button.innerHTML=" &nbsp; Comenzar <i class=\"fas fa-play-circle\"></i>";
+    button.innerHTML = " &nbsp; Comenzar <i class=\"fas fa-play-circle\"></i>";
 
     const button1 = document.getElementById('btnEjemplo2.2');
     button1.disabled = true;
@@ -289,7 +289,7 @@ function funcClearEjemplo2() {
     }
     var strResults = "";
     document.getElementById("pResultados2").innerHTML = strResults;
-  
+
     clearInterval(myVar);
 }
 
@@ -302,7 +302,7 @@ function Valor2Help() {
 
     const button1 = document.getElementById('btnEjemplo2');
     const data = document.getElementById('Valor2').value;
-    
+
 
     if (data !== null && data !== '') {
         document.getElementById("Valor2Help").innerHTML = ``;
@@ -322,10 +322,10 @@ function Valor2Help() {
 function fWhile() {
     say("BEGIN fWhile");
     const data = document.getElementById('Valor2').value;
-    while (data != "ESC" ) {
+    while (data != "ESC") {
         say(`ITERACION ${nIteracion2}`);
-        
-        $("#modal1").modal('show');        
+
+        $("#modal1").modal('show');
 
 
         strEjemplo2 += SEPARADOR + data + SEPARADOR + fibonacci(nIteracion2);
@@ -334,8 +334,11 @@ function fWhile() {
         document.getElementById("pResultados2").innerHTML = strEjemplo2;
         document.getElementById("Resultado2Iteracion").innerHTML = `Iteración ${nIteracion2}`;
         const button1 = document.getElementById('btnEjemplo2.2');
-        if (nIteracion2!=0){button1.disabled = false;}
-        else{button1.disabled = true;}
+        if (nIteracion2 != 0) {
+            button1.disabled = false;
+        } else {
+            button1.disabled = true;
+        }
 
         $("#modal1").modal('hide');
         clearInterval(myVar);
@@ -350,7 +353,7 @@ function fWhile() {
 function funcEjemplo2() {
 
     saycs("BEGIN");
-    
+
     const button = document.getElementById('btnEjemplo2');
     const button3 = document.getElementById('btnMenu2');
 
@@ -367,15 +370,121 @@ function funcEjemplo2() {
         x.style.display = "block";
         x.style.fontWeight = "bold";
     }
-    
-    $("#modal1").modal('hide');    
-    
+
+    $("#modal1").modal('hide');
+
 
     saycs("Invocar setInterval");
-    
+
     myVar = setInterval(fWhile, 1000);
 
     saycs("END");
 
 }
 
+function fBotonDoWhile() {
+    saycs("BEGIN");
+
+    funcDispararModal(2);
+
+    saycs("END");
+}
+
+function funcCloseEjemplo3() {
+    $("#modal2").modal('hide');
+}
+
+function Valor3Help() {
+
+    const button1 = document.getElementById('btnEjemplo3');
+
+    //Numero3
+    let nNumber3 = Number(document.getElementById("Valor3").value);
+    say("nNumber3=" + nNumber3);
+
+    if (!isNumber(Number(nNumber3))) {
+        document.getElementById("Valor3Help").innerHTML = `Por favor ingrese un número`;
+        bRetval = false;
+        button1.disabled = !bRetval;
+        return;
+    } else {
+        bRetval = true;
+    }
+    if (isNaN(nNumber3)) {
+        document.getElementById("Valor3Help").innerHTML = `Por favor ingrese un número`;
+        bRetval = false;
+        button1.disabled = !bRetval;
+        return;
+    } else {
+        bRetval = true;
+    }
+    if (!Number.isInteger(nNumber3)) {
+        document.getElementById("Valor3Help").innerHTML = `Debe ser un número entero.`;
+        bRetval = false;
+        button1.disabled = !bRetval;
+        return;
+    } else {
+        bRetval = true;
+    }
+
+    button1.disabled = !bRetval;
+    return;
+}
+
+function funcEjemplo3() {
+
+
+    const button1 = document.getElementById('btnEjemplo3');
+    button1.disabled = true;
+
+    const sInput = document.getElementById("Valor3");
+    sInput.disabled = true;
+
+    var x = document.getElementById("Resultado3");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+        x.style.fontWeight = "bold";
+    }
+
+
+    const data = Number(document.getElementById('Valor3').value);
+    let nCurIteracion = 1;
+    let strEjemplo3 = "";
+    do {
+        say(`ITERACION ${nCurIteracion} de ${data}`);
+        strEjemplo3 += "Hola!" + SEPARADOR + "<br>";
+        document.getElementById("pResultados3").innerHTML = strEjemplo3;
+        document.getElementById("Resultado3Iteracion").innerHTML = `Iteración ${nCurIteracion}`;
+        const button2 = document.getElementById('btnEjemplo3.2');
+        if (nCurIteracion != 1) {
+            button2.disabled = false;
+        } else {
+            button2.disabled = true;
+        }
+        nCurIteracion++;
+    }
+    while (nCurIteracion <= data)
+}
+
+function funcClearEjemplo3() {
+
+
+    const button = document.getElementById('btnEjemplo3');
+    button.disabled = true;
+    button.innerHTML = " &nbsp; Comenzar <i class=\"fas fa-play-circle\"></i>";
+
+    const button1 = document.getElementById('btnEjemplo3.2');
+    button1.disabled = true;
+
+    const text1 = document.getElementById('Valor3');
+    text1.innerHTML.value = "";
+    text1.disabled = false
+
+    var x = document.getElementById("Resultado3");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    }
+    var strResults = "";
+    document.getElementById("pResultados3").innerHTML = strResults;
+
+}
