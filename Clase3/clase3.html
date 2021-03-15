@@ -38,7 +38,7 @@
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="favicon.ico">
 
-    <title>JS:Clase #2</title>
+    <title>JS:Clase #3</title>
 </head>
 
 <body>
@@ -102,7 +102,7 @@
         <div class="jumbotron text-center " style="margin-bottom:0; margin-top: -13em;">
             <p>
                 <script>
-                    const TXTBIENVENIDO = "Bienvenido a la clase 2.";
+                    const TXTBIENVENIDO = "Bienvenido a la clase 3.";
                     console.log(TXTBIENVENIDO);
                 </script>
             </p>
@@ -118,12 +118,13 @@
             </h6>
 
             <div class="jumbotron text-center"
-                style='margin-bottom:13px;background-image: url("/img/fibo-back.jpeg");height: 400px;background-size: cover;background-blend-mode: soft-light;margin-top: 39px; opacity: 89%;'>
+                style='margin-bottom:13px;background-image: url("/img/fibo-back.jpeg");height: max-content;background-size: contain;background-blend-mode: soft-light;margin-top: 39px; opacity: 89%;background-repeat: no-repeat;min-height: 600px;'>
 
                 <!-- Button trigger modal -->
                 <div class="row">
-                    <button type="button" class="btn btn-primary btn-block" onclick="fBotonSumarNumeros()"
-                        style="margin-bottom: 26px;opacity: 89%;">
+
+                    <button type="button" class="btn btn-primary mx-auto d-block btn-block"
+                        onclick="fBotonSumarNumeros()" style="margin-bottom: 26px;opacity: 89%; max-width: 26em;">
                         <span class="fa-stack">
                             <!-- The icon that will wrap the number -->
                             <span class="fa fa-circle-o fa-stack-2x"></span>
@@ -134,12 +135,13 @@
                         </span>
                         &nbsp;Primer ejemplo
                     </button>
+
                 </div>
 
 
                 <div class="row">
-                    <button type="button" class="btn btn-primary btn-block" onclick="fBotonCriterios()"
-                        style="margin-bottom: 26px;opacity: 89%;">
+                    <button type="button" class="btn btn-primary mx-auto d-block btn-block" onclick="fBotonWhile()"
+                        style="margin-bottom: 26px;opacity: 89%;max-width: 26em;" id="btnMenu2">
                         <span class="fa-stack">
                             <!-- The icon that will wrap the number -->
                             <span class="fa fa-circle-o fa-stack-2x"></span>
@@ -152,8 +154,8 @@
                     </button>
                 </div>
                 <div class="row">
-                    <button type="button" class="btn btn-primary btn-block" onclick="fBotonCriterios()"
-                        style="margin-bottom: 26px;opacity: 89%;">
+                    <button type="button" class="btn btn-primary mx-auto d-block btn-block" onclick="fBotonCriterios()"
+                        style="margin-bottom: 26px;opacity: 89%;max-width: 26em;">
                         <span class="fa-stack">
                             <!-- The icon that will wrap the number -->
                             <span class="fa fa-circle-o fa-stack-2x"></span>
@@ -166,103 +168,198 @@
                     </button>
                 </div>
             </div>
+        </div>
 
 
-
-            <!-- Modal0-->
-            <div class="modal fade" id="modal0" data-backdrop="static" data-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true" style="width: 89%">
-                <div class="modal-dialog modal-dialog-scrollable">
-                    <div class=" modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Primer Ejemplo</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+        <!-- FOOTER -->
+        <div class="jumbotron text-center footer" style="margin-bottom:0">
+            <div class="row">
+                <div class="col">
+                    <p><i class="fa fa-copyright" aria-hidden="true"></i>
+                        Juan Vidal - Todos los derechos reservados.</p>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col text-right colPoweredBy">
+                            Powered by
                         </div>
-                        <div class="modal-body">
-                            <p>
-                                <div class="row">
-                                    <div class="col-sm-2 text-center"><svg xmlns="http://www.w3.org/2000/svg" width="52"
-                                            height="52" fill="currentColor" class="bi bi-person-bounding-box"
-                                            viewBox="0 0 16 16">
-                                            <path
-                                                d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z" />
-                                            <path
-                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                        </svg></i></div>
-                                    <div class="col-sm-10">
-                                        <h6>
-                                            <form>
-                                                <div class="form-group">
-                                                    <p>Por favor, ingrese un número que será sumado a su elemento
-                                                        correspondiente en la sucesión de Fibonacci y la cantidad de
-                                                        repeticiones que desea ejecutar.</p>
-                                                    <div class="row mx-auto">
-                                                        <div class="col-3">
-                                                            <label for="Valor1">Número:</label>
-                                                            <input type="cantRep" class="form-control" size="4"
-                                                                name="Valor1" min="0" required id="Valor1">
+                        <div class="col text-left footerLogo">
+                            <div class="LogoCoderHousewrapper"
+                                style="background-image:url('../img/coderhouse_logo_black.jpg');"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                                                        </div>
-                                                        <small id="Valor1Help" class="form-text text-muted"></small>
-                                                    </div>
-                                                    &nbsp;
-                                                    <div class="row mx-auto">
-                                                        <div class="col-3">
-                                                            <label for="age">Cant.Repeticiones:</label>
-                                                            <input type="cantRep" class="form-control" size="4"
-                                                                name="cantRep" min="0" required id="cantRep">
-
-                                                        </div>
-                                                        <small id="cantRepHelp" class="form-text text-muted"></small>
-                                                    </div>
-
+    <!-- Modal0 -->
+    <div class="modal fade" id="modal0" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true" style="width: 100%">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class=" modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Primer Ejemplo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <div class="row">
+                            <div class="col-sm-2 text-center"><span class="fa-stack">
+                                    <!-- The icon that will wrap the number -->
+                                    <span class="fa fa-circle-o fa-stack-2x"></span>
+                                    <!-- a strong element with the custom content, in this case a number -->
+                                    <strong class="fa-stack-1x">
+                                        1
+                                    </strong>
+                                </span></div>
+                            <div class="col-sm-10">
+                                <h6>
+                                    <form>
+                                        <div class="form-group">
+                                            <p>Ejemplo sentencia for():
+                                                <br>
+                                                Por favor, ingrese un número que será
+                                                sumado a su elemento
+                                                correspondiente en la sucesión de Fibonacci tantas veces como se indique
+                                                en el campo "Cant.Repeticiones".
+                                                <br>
+                                                Por cada iteración, se incrementará el número inicial en 1.
+                                            </p>
+                                            <div class="row mx-auto">
+                                                <div class="col-3">
+                                                    <label for="Valor1">Número:</label>
+                                                    <input type="text" class="form-control" size="4" name="Valor1"
+                                                        min="0" required id="Valor1" onchange="clearHelp()">
                                                 </div>
-                                            </form>
-                                        </h6>
+                                                <div class=" row mx-auto"><small id="Valor1Help"
+                                                        class="form-text text-muted"></small></div>
+
+                                            </div>
+                                            &nbsp;
+                                            <div class="row mx-auto">
+                                                <div class="col-3">
+                                                    <label for="cantRep">Cant.Repeticiones:</label>
+                                                    <input type="text" class="form-control" size="4" name="cantRep"
+                                                        min="0" required id="cantRep" onchange="clearHelp()">
+                                                </div>
+                                                <div class=" row mx-auto">
+                                                    <small id="cantRepHelp" class="form-text text-muted"></small>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </form>
+                                    <div id="Resultado1" style="display: none;">
+                                        <p>El resultado es:</p>
+                                        <p id="pResultados">
                                     </div>
-                                </div>
-                            </p>
+                                </h6>
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" onclick="funcNext()"
-                                data-dismiss="modal0"></i>&nbsp;
-                                Calcular <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
+                    </p>
                 </div>
-            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="funcEjemplo1()" data-dismiss=""
+                        id="btnEjemplo1" disabled></i>&nbsp;
+                        Calcular <i class="fas fa-calculator"></i></button>
+                    <button type="button" class="btn btn-success" onclick="funcClearEjemplo1()" data-dismiss=""
+                        id="btnEjemplo1.2" disabled></i>&nbsp;
+                        Borrar datos <i class="fas fa-power-off"></i></button>
+                    <button type="button" class="btn btn-danger" onclick="funcCloseEjemplo1()" data-dismiss="modal0"
+                        id="btnEjemplo1.3"></i>&nbsp;
+                        Cerrar <i class="fas fa-times"></i></button>
 
-
-
-        </div>
-    </div>
-
-    <!-- FOOTER -->
-    <div class="jumbotron text-center footer" style="margin-bottom:0">
-        <div class="row">
-            <div class="col">
-                <p><i class="fa fa-copyright" aria-hidden="true"></i>
-                    Juan Vidal - Todos los derechos reservados.</p>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col text-right colPoweredBy">
-                        Powered by
-                    </div>
-                    <div class="col text-left footerLogo">
-                        <div class="LogoCoderHousewrapper"
-                            style="background-image:url('../img/coderhouse_logo_black.jpg');"></div>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+
+
+
+    <!-- Modal1 -->
+    <div class="modal fade" id="modal1" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true" style="width: 100%">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class=" modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Segundo Ejemplo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <div class="row">
+                            <div class="col-sm-2 text-center"><span class="fa-stack">
+                                    <!-- The icon that will wrap the number -->
+                                    <span class="fa fa-circle-o fa-stack-2x"></span>
+                                    <!-- a strong element with the custom content, in this case a number -->
+                                    <strong class="fa-stack-1x">
+                                        2
+                                    </strong>
+                                </span></div>
+                            <div class="col-sm-10">
+                                <h6>
+                                    <form>
+                                        <div class="form-group">
+                                            <p>Ejemplo sentencia while():
+                                                <br>
+                                                Ingrese un texto, al que se le concatenará el término de la sucesion de
+                                                Fibonacci que coincida con el número de iteración actual
+                                                realizando una salida por cada resultado, hasta que se ingrese la
+                                                palabra “ESC”.
+                                                <br>
+                                            </p>
+                                            <div class="row mx-auto">
+                                                <div class="col">
+                                                    <label for="Valor2">Cadena:</label>
+                                                    <input type="text" class="form-control" size="13" name="Valor1"
+                                                        required id="Valor2" onchange="Valor2Help()">
+                                                </div>
+                                                <div class="row mx-auto"><small id="Valor2Help"
+                                                        class="form-text text-muted"></small></div>
+
+                                            </div>
+                                            &nbsp;
+                                        </div>
+
+                                    </form>
+                                    <div id="Resultado2" style="display: none;">
+                                        <p>El resultado es:</p>
+                                        <div class="row mx-auto"><small id="Resultado2Iteracion"
+                                            class="form-text text-muted" style="margin-top: -2.6em;margin-left: 19.89em;"></small></div>
+                                        <p id="pResultados2">
+                                    </div>
+
+                                </h6>
+                            </div>
+                        </div>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="funcEjemplo2()" data-dismiss=""
+                        id="btnEjemplo2" disabled></i>&nbsp;
+                        Comenzar <i class="fas fa-play-circle"></i></button>
+                    <button type="button" class="btn btn-success" onclick="funcClearEjemplo2()" data-dismiss=""
+                        id="btnEjemplo2.2" disabled></i>&nbsp;
+                        Reiniciar <i class="fas fa-power-off"></i></button>
+                    <button type="button" class="btn btn-danger" onclick="funcCloseEjemplo2()" data-dismiss="modal0"
+                        id="btnEjemplo2.3"></i>&nbsp;
+                        Cerrar <i class="fas fa-times"></i></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripting -->
     <script src="js/claseVidal.js"></script>
     <script src="js/script.js"></script>
-    </div>
 
 
 </body>
