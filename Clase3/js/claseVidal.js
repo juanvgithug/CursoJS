@@ -327,8 +327,10 @@ function fWhile() {
 
         $("#modal1").modal('show');
 
+        if (nIteracion2 >= 1) {
+            strEjemplo2 += ";" + SEPARADOR + "(" + data + SEPARADOR + "," + SEPARADOR + fibonacci(nIteracion2) + ")";
+        }else{strEjemplo2 += SEPARADOR + "(" + data + SEPARADOR + "," + SEPARADOR + fibonacci(nIteracion2) + ")";}
 
-        strEjemplo2 += SEPARADOR + data + SEPARADOR + fibonacci(nIteracion2);
         nIteracion2++;
 
         document.getElementById("pResultados2").innerHTML = strEjemplo2;
@@ -426,6 +428,15 @@ function Valor3Help() {
     } else {
         bRetval = true;
     }
+    if (nNumber3 == 0) {
+        document.getElementById("Valor3Help").innerHTML = `Debe ser un número distinto de 0.`;
+        bRetval = false;
+        button1.disabled = !bRetval;
+        return;
+    } else {
+        bRetval = true;
+    }
+
 
     button1.disabled = !bRetval;
     return;
@@ -433,7 +444,7 @@ function Valor3Help() {
 
 function funcEjemplo3() {
 
-
+    document.getElementById("Valor3Help").innerHTML = ``;
     const button1 = document.getElementById('btnEjemplo3');
     button1.disabled = true;
 
@@ -448,14 +459,15 @@ function funcEjemplo3() {
 
 
     const data = Number(document.getElementById('Valor3').value);
+    const button2 = document.getElementById('btnEjemplo3.2');
     let nCurIteracion = 1;
     let strEjemplo3 = "";
     do {
         say(`ITERACION ${nCurIteracion} de ${data}`);
         strEjemplo3 += "Hola!" + SEPARADOR + "<br>";
         document.getElementById("pResultados3").innerHTML = strEjemplo3;
-        document.getElementById("Resultado3Iteracion").innerHTML = `Iteración ${nCurIteracion}`;
-        const button2 = document.getElementById('btnEjemplo3.2');
+        document.getElementById("Resultado3Iteracion").innerHTML = `${nCurIteracion} Iteraciones`;
+
         if (nCurIteracion != 1) {
             button2.disabled = false;
         } else {
@@ -464,11 +476,14 @@ function funcEjemplo3() {
         nCurIteracion++;
     }
     while (nCurIteracion <= data)
+
+    button2.disabled = false;
+
 }
 
 function funcClearEjemplo3() {
 
-
+    document.getElementById("Valor3Help").innerHTML = ``;
     const button = document.getElementById('btnEjemplo3');
     button.disabled = true;
     button.innerHTML = " &nbsp; Comenzar <i class=\"fas fa-play-circle\"></i>";
