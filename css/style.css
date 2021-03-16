@@ -205,3 +205,20 @@ h2 {
     color: #2e0049;
     text-align: justify;
 }
+
+.h7
+{
+    font-size: 13px;
+}
+
+.tituloTabla 
+{
+    font-weight: bold;
+    color: dodgerblue;
+}
+
+.contenidoTabla 
+{
+    font-weight: bold;
+    color: whitesmoke;
+}
