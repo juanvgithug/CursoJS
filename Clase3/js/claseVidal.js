@@ -464,7 +464,7 @@ function funcEjemplo3() {
     let strEjemplo3 = "";
     do {
         say(`ITERACION ${nCurIteracion} de ${data}`);
-        let strEjemplo3 += "Hola!" + SEPARADOR + "<br>";
+        let strEjemplo3 = "Hola!" + SEPARADOR + "<br>";
         document.getElementById("pResultados3").innerHTML = strEjemplo3;
         document.getElementById("Resultado3Iteracion").innerHTML = `${nCurIteracion} Iteraciones`;
 
