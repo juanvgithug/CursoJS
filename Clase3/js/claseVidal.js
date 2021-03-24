@@ -4,59 +4,10 @@ Camada: 14365
 */
 
 /* Constantes y Variables */
-const SEPARADOR = " ";
 let bBoton2Activo = false;
 let strEjemplo2 = "";
 let nIteracion2 = 0;
 var myVar;
-
-/* Toolkit */
-/*    Primer letra en mayúscula. */
-String.prototype.capitalize = function (lower) {
-    return (lower ? this.toLowerCase() : this).replace(/(?:^|\s|['`‘’.-])[^\x00-\x60^\x7B-\xDF](?!(\s|$))/g, function (a) {
-        return a.toUpperCase();
-    });
-};
-
-/*    isNumber: Retorna TRUE si es un numero */
-function isNumber(num) {
-    return !isNaN(parseFloat(num)) && isFinite(num);
-}
-
-/*    Salida a consola + call stack*/
-function saycs(stringOut) {
-    var thisFunction = arguments.callee;
-    var caller = thisFunction.caller;
-    var outStr = String(caller.caller).split(/\r?\n/);
-    console.log(outStr + stringOut);
-}
-
-/*    Salida a consola */
-function say(stringOut) {
-    console.log(stringOut);
-}
-
-
-/*    Emitir alerta en browser y consola.*/
-function alertCampoNulo(nombreCampo) {
-    return say("  > WARNING: El valor ingresado es nulo ( " + nombreCampo + " )");
-}
-
-/*    Fibonacci: Obtener el N... término de la sucesión */
-function fibonacci(num) {
-    var a = 1,
-        b = 0,
-        temp;
-
-    while (num >= 0) {
-        temp = a;
-        a = a + b;
-        b = temp;
-        num--;
-    }
-
-    return b;
-}
 
 /* Dispara dialogo modal con ejemplos */
 function funcDispararModal(ventanaID) {
@@ -464,7 +415,7 @@ function funcEjemplo3() {
     let strEjemplo3 = "";
     do {
         say(`ITERACION ${nCurIteracion} de ${data}`);
-        let strEjemplo3 = "Hola!" + SEPARADOR + "<br>";
+        strEjemplo3 +=  "Hola!" + SEPARADOR + "<br>";
         document.getElementById("pResultados3").innerHTML = strEjemplo3;
         document.getElementById("Resultado3Iteracion").innerHTML = `${nCurIteracion} Iteraciones`;
 

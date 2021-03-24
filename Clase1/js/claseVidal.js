@@ -9,7 +9,6 @@ var nombreCurso = "Javascript"; // declarada + inicializada
 
 //EC6
 let nombreVariable; //solo declarada. sin inicializar
-const SEPARADOR = " ";
 
 /*
     Preguntar Nombre y apellido.

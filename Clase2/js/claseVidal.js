@@ -4,7 +4,6 @@ Camada: 14365
 */
 
 /* Constantes y Variables */
-const SEPARADOR = " ";
 var bContinuar = new Boolean(true);
 
 let cadenaSalida = "";
