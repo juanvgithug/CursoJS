@@ -9,8 +9,9 @@ say(CODERHOUSE);
 
 //manejar menu
 function fMainMenu() {
-/*
+
     var xMenu = document.getElementById("clasesMenu");
+
     //clase 1
     var content = xMenu.insertAdjacentHTML('beforeend', "<a class=\"dropdown-item\" href=\"Clase1/clase1.html\">Clase 1</a>");
 
@@ -37,7 +38,7 @@ function fMainMenu() {
 
     //WS2
     var content = xMenu.insertAdjacentHTML('beforeend', "<a class=\"dropdown-item\" href=\"#\">Workshop 2</a>");
-*/
+
 }
 //funciones de cada pagina
 function func2() {
