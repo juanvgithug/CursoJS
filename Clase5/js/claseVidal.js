@@ -4,57 +4,9 @@ Camada: 14365
 */
 
 /* Constantes y Variables */
-const SEPARADOR = " ";
-
-/* Toolkit */
-/*    Primer letra en mayúscula. */
-String.prototype.capitalize = function (lower) {
-    return (lower ? this.toLowerCase() : this).replace(/(?:^|\s|['`‘’.-])[^\x00-\x60^\x7B-\xDF](?!(\s|$))/g, function (a) {
-        return a.toUpperCase();
-    });
-};
-
-/*    isNumber: Retorna TRUE si es un numero */
-function isNumber(num) {
-    return !isNaN(parseFloat(num)) && isFinite(num);
-}
-
-/*    Salida a consola + call stack*/
-function saycs(stringOut) {
-    var thisFunction = arguments.callee;
-    var caller = thisFunction.caller;
-    var outStr = String(caller.caller).split(/\r?\n/);
-    console.log(outStr + stringOut);
-}
-
-/*    Salida a consola */
-function say(stringOut) {
-    console.log(stringOut);
-}
 
 
-/*    Emitir alerta en browser y consola.*/
-function alertCampoNulo(nombreCampo) {
-    return say("  > WARNING: El valor ingresado es nulo ( " + nombreCampo + " )");
-}
-
-/*    Fibonacci: Obtener el N... término de la sucesión */
-function fibonacci(num) {
-    var a = 1,
-        b = 0,
-        temp;
-
-    while (num >= 0) {
-        temp = a;
-        a = a + b;
-        b = temp;
-        num--;
-    }
-
-    return b;
-}
-
-/* Clase #4. Programación avanzada con funciones */
+/* Clase #5. Objetos */
 
 function funcCloseGrandTotal() {
     $("#modal0").modal('hide');
@@ -96,6 +48,7 @@ function validarDatos() {
     return bValidar;
 }
 
+// OBJETO ROW
 function row(rowId, txtId, Code, Client, Quantity, Price) {
     this.rowId = rowId;
     this.txtId = txtId;
@@ -106,10 +59,12 @@ function row(rowId, txtId, Code, Client, Quantity, Price) {
     this.Total = Quantity * Price;
 }
 
+//OBJETO MODEL
 function model() {
     this.rows = [];
 }
 
+//Constructor de OBJETO MODEL
 var mymodel = new model();
 
 $(document).ready(function () {
@@ -149,6 +104,7 @@ $(document).ready(function () {
                 x.style.display = "block";
                 x.style.fontWeight = "bold";
             }
+
             let strEjemplo3 = "Total Cantidad = " + Number(document.getElementById("totalQuantity").innerHTML) + SEPARADOR + "productos. <br>";
             strEjemplo3 += "Total Precio = $" + Number(document.getElementById("totalPrice").innerHTML) + SEPARADOR + "<br>";
             strEjemplo3 += "IVA = 21% = $" + Number(document.getElementById("totalPrice").innerHTML) * 0.21 + SEPARADOR + "<br>";
