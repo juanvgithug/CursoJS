@@ -83,3 +83,17 @@ function includeMenuHTML() {
       }
     }
   }
+
+  /* Order an Array / Toggle ascending|descending */ 
+  function sortArray(a, isAscending) {
+    var currentSort = a["my_sort_order"];
+    if (typeof currentSort != 'boolean') {
+       // assume it be unsorted, use sort alogorithm
+       a.sort(function(a,b) { return isAscending ? a - b : b - a; }); // assuming numerical array, modify as per your needs
+    } else if (currentSort != isAscending) {
+       // sorted but in different order, reverse the order
+       a.reverse(); // or use for loop
+    }
+    // set the sort order
+    a["my_sort_order"] = isAscending ? true : false;
+  }
