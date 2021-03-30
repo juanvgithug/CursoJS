@@ -17,10 +17,17 @@ function fMainMenu() {
 function func2() {
 
     let arrLocation = window.location.href.split("/");
-    if (arrLocation[arrLocation.length - 1] == "clase6.html") {
-        //say(arrLocation[arrLocation.length - 1]);
-        loadCombo();
+    switch (arrLocation[arrLocation.length - 1]) {
+        case "clase6.html":
+            loadCombo();
+            break;
+        case "1aEntregaProyFinal.html":
+            loadCombo();
+            break;
+        default:
+
     }
+
 }
 
 //hook a OnLoad

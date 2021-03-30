@@ -38,7 +38,7 @@
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="favicon.ico">
 
-    <title>JS:Clase #4</title>
+    <title>JS:Proyecto Final | Entrega #1</title>
 </head>
 
 <body>
@@ -76,12 +76,13 @@
                             <a class="dropdown-item " href="../Clase2/clase2.html">Clase 2</a>
                             <a class="dropdown-item " href="../Clase3/clase3.html">Clase 3</a>
                             <a class="dropdown-item" href="../Clase4a/clase4a.html">Clase 4 - Simulador interactivo</a>
-                            <a class="dropdown-item active" href="clase4b.html">Clase 4 - Funciones Relacionadas</a>
-                            <a class="dropdown-item" href="../Clase5/clase5.html">Clase 5 - Objetos</a>   
-                            <a class="dropdown-item " href="../Clase6/clase6.html">Clase 6 - Arrays</a>    
+                            <a class="dropdown-item" href="../Clase4b/clase4b.html">Clase 4 - Funciones Relacionadas</a>
+                            <a class="dropdown-item" href="../Clase5/clase5.html">Clase 5 - Objetos</a>
+                            <a class="dropdown-item" href="../Clase6/clase6.html">Clase 6 - Arrays</a>
                             <a class="dropdown-item" href="#">Clase ...</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="1aEntregaProyFinal/1aEntregaProyFinal.html">Proyecto Final - Primera Entrega</a>
+                            <a class="dropdown-item active" href="1aEntregaProyFinal.html">Proyecto Final - Primera
+                                Entrega</a>
                             <a class="dropdown-item" href="#">Workshop 1</a>
                             <a class="dropdown-item" href="#">Workshop 2</a>
                         </div>
@@ -101,25 +102,26 @@
         <div class="jumbotron text-center topPagina">
         </div>
         <div class="jumbotron text-center bgTopText" style="top: -5em;">
-            <h2>Curso JavaScript. Clase #4. Programación avanzada con funciones</h1>
+            <h2>Curso JavaScript. Proyecto Final - 1a entrega</h1>
         </div>
 
         <div class="jumbotron text-center " style="margin-bottom:0; margin-top: -13em;">
             <p>
                 <script>
-                    const TXTBIENVENIDO = "Bienvenido a la clase 4.";
+                    const TXTBIENVENIDO = "Bienvenido al Proyecto Final / Entrega #1.";
                     console.log(TXTBIENVENIDO);
                 </script>
             </p>
 
-            <h1><i class="fas fa-robot"></i>&nbsp;Simulador Interactivo + Funciones Relacionadas</h1>
+            <h1><i class="fas fa-user-graduate"></i>&nbsp;Proyecto Final</h1>
             <h6>
                 &nbsp;
 
                 <ul style="list-style-type: none;">
                     <p style="text-align: left;">Objetivo: </p>
-                    <li style="padding-left: 2.6em;  text-align: left; list-style-type: none; margin: 0;">Calcular costo
-                        total de productos y/o servicios seleccionados por el usuario.</li>
+                    <li style="padding-left: 2.6em;  text-align: left; list-style-type: none; margin: 0;">Crear una
+                        lista interactiva para sitio web (intranet) con detalle de productos/servicios y cálculo de
+                        totales.</li>
                     <li style="padding-left: 2.6em;  text-align: left; list-style-type: none; margin: 0;">Mostrar el
                         Total general con el IVA calculado en un diálogo MODAL</li>
                 </ul>
@@ -136,7 +138,13 @@
                                 <td class="tituloTabla">Tipo</td>
                                 <td class="tituloTabla">Cantidad</td>
                                 <td class="tituloTabla">Precio</td>
-                                <td class="tituloTabla">Total</td>
+                                <td class="tituloTabla">Total
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary btn-sm" id="btnSort"
+                                        onclick="sortPrice()"><i class="fas fa-sort"></i></button></td>
+
+                                </td>
+
                                 <td class="tituloTabla">&nbsp; </td>
                             </tr>
                         </thead>
@@ -182,9 +190,6 @@
                             <label for="type">Tipo :</label>
                             <select name="type" id="cliente" class="form-control form-control-sm  h7"
                                 style="max-width: 89px;">
-                                <option value="" selected="selected">Seleccione...</option>
-                                <option value="Producto">Producto</option>
-                                <option value="Servicio">Servicio</option>
                             </select>
                         </div>
                         &nbsp;
@@ -272,13 +277,43 @@
                         <p>
                             <div class="row">
                                 <div class="col-sm-2 text-center">
-                                    <i class="fas fa-equals"></i>
+                                    <i class="fa fa-calculator fa-2x" aria-hidden="true"></i>
                                 </div>
                                 <div class="col-sm-10">
                                     <h6>
                                         <div id="Resultado" style="display: none;">
                                             <p>Los Totales Son:</p>
-                                            <p id="pResultados">
+                                            <p id="pResultados"> </p>
+
+                                            <div class="divTable paleBlueRows">
+                                                <div class="divTableHeading">
+                                                    <div class="divTableRow">
+                                                        <div class="divTableHead" id="head1">Descripción</div>
+                                                        <div class="divTableHead" id="head2">Cantidad</div>
+                                                    </div>
+                                                </div>
+                                                <div class="divTableBody">
+                                                    <div class="divTableRow">
+                                                        <div class="divTableCell" id="cell1_1">Total Cantidades</div>
+                                                        <div class="divTableCell" id="totCant"></div>
+                                                    </div>
+                                                    <div class="divTableRow">
+                                                        <div class="divTableCell" id="cell1_2">Total Precio</div>
+                                                        <div class="divTableCell" id="totPrecio"></div>
+                                                    </div>
+                                                    <div class="divTableRow">
+                                                        <div class="divTableCell" id="cell1_3">Total IVA 21%</div>
+                                                        <div class="divTableCell" id="totIVA"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="divTableFoot tableFootStyle">
+                                                    <div class="divTableRow">
+                                                        <div class="divTableCell" id="Total General">Total General</div>
+                                                        <div class="divTableCell" id="totGeneral"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </h6>
                                 </div>
@@ -296,13 +331,10 @@
         </div>
 
 
-
-
-
         <!-- Scripting -->
-        <script src="../js/main.js"></script>
         <script src="../js/tools.js"></script>
         <script src="js/claseVidal.js"></script>
+        <script src="../js/main.js"></script>
 
 </body>
 
