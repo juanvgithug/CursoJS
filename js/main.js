@@ -9,14 +9,18 @@ say(CODERHOUSE);
 
 //manejar menu
 function fMainMenu() {
-    
+
     includeMenuHTML();
 
 }
 //funciones de cada pagina
 function func2() {
-    say("Funciones de cada página.");
 
+    let arrLocation = window.location.href.split("/");
+    if (arrLocation[arrLocation.length - 1] == "clase6.html") {
+        //say(arrLocation[arrLocation.length - 1]);
+        loadCombo();
+    }
 }
 
 //hook a OnLoad

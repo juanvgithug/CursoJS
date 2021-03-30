@@ -90,7 +90,7 @@ $(document).ready(function () {
                 Number($('#Quantity').val()),
                 Number($('#Price').val())
             ))
-            say(mymodel.rows[mymodel.rows.length - 1]);
+            //say(mymodel.rows[mymodel.rows.length - 1]);
             draw();
         }
     });
@@ -109,14 +109,8 @@ $(document).ready(function () {
             strEjemplo3 += "Total Precio = $" + Number(document.getElementById("totalPrice").innerHTML) + SEPARADOR + "<br>";
             strEjemplo3 += "IVA = 21% = $" + Number(document.getElementById("totalPrice").innerHTML) * 0.21 + SEPARADOR + "<br>";
             strEjemplo3 += "Total General = $" + Number(document.getElementById("totalPrice").innerHTML) * 1.21 + SEPARADOR + "<br>";
+
             document.getElementById("pResultados").innerHTML = strEjemplo3;
-            //console.table(mymodel.rows);
-
-
-            sortArray(mymodel.rows);
-            say("Despues de ordenar");
-            console.table(mymodel.rows);
-
         }
     });
 
@@ -143,4 +137,34 @@ function draw() {
     });
     $('#totalQuantity').text(totalQuantity)
     $('#totalPrice').text(totalPrice)
+}
+
+function loadCombo() {
+
+    let options = ["Producto", "Servicio"];
+    let select = document.getElementById("cliente");
+
+    let el0 = document.createElement("option");
+    el0.textContent = "Seleccione";
+    el0.selected = "selected";
+    el0.value = "";
+    select.appendChild(el0);
+
+    for (let n = 0; n < options.length; n++) {
+        var opt = options[n];
+        var el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        select.appendChild(el);
+    }
+
+}
+
+function sortPrice() {
+
+    sortArray(mymodel.rows);
+    //say("Despues de ordenar");
+    //console.table(mymodel.rows);
+    draw();
+
 }

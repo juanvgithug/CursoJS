@@ -38,7 +38,7 @@
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="favicon.ico">
 
-    <title>JS:Clase #4</title>
+    <title>JS:Clase #6</title>
 </head>
 
 <body>
@@ -111,7 +111,7 @@
                 </script>
             </p>
 
-            <h1><i class="fas fa-table"></i>&nbsp;Objetos</h1>
+            <h1><i class="fas fa-table"></i>&nbsp;Arrays</h1>
             <h6>
                 &nbsp;
 
@@ -121,7 +121,11 @@
                         total de productos y/o servicios seleccionados por el usuario.</li>
                     <li style="padding-left: 2.6em;  text-align: left; list-style-type: none; margin: 0;">Mostrar el
                         Total general con el IVA calculado en un diálogo MODAL</li>
-                    <li style="padding-left: 2.6em;  text-align: left; list-style-type: none; margin: 0;">Se ordena tabla por valores</li>
+                    <li style="padding-left: 2.6em;  text-align: left; list-style-type: none; margin: 0;">Se carga el
+                        combo de "Tipo" (de item de facturación) con un Array.</li>
+                    <li style="padding-left: 2.6em;  text-align: left; list-style-type: none; margin: 0;">DESAFIO
+                        COMPLEMENTARIO: Se ordena
+                        tabla por valores (mayor a menor, y menor a mayor)</li>
                 </ul>
             </h6>
 
@@ -136,7 +140,13 @@
                                 <td class="tituloTabla">Tipo</td>
                                 <td class="tituloTabla">Cantidad</td>
                                 <td class="tituloTabla">Precio</td>
-                                <td class="tituloTabla">Total</td>
+                                <td class="tituloTabla">Total
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary btn-sm"onclick="sortPrice()"><i
+                                            class="fas fa-sort"></i></button></td>
+
+                                </td>
+
                                 <td class="tituloTabla">&nbsp; </td>
                             </tr>
                         </thead>
@@ -182,9 +192,6 @@
                             <label for="type">Tipo :</label>
                             <select name="type" id="cliente" class="form-control form-control-sm  h7"
                                 style="max-width: 89px;">
-                                <option value="" selected="selected">Seleccione...</option>
-                                <option value="Producto">Producto</option>
-                                <option value="Servicio">Servicio</option>
                             </select>
                         </div>
                         &nbsp;
@@ -296,13 +303,10 @@
         </div>
 
 
-
-
-
         <!-- Scripting -->
         <script src="../js/tools.js"></script>
-        <script src="../js/main.js"></script>
         <script src="js/claseVidal.js"></script>
+        <script src="../js/main.js"></script>
 
 </body>
 
