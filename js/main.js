@@ -10,15 +10,18 @@ say(CODERHOUSE);
 //manejar menu
 function fMainMenu() {
 
-    includeMenuHTML();
-
+    //includeMenuHTML();
 }
+
 //funciones de cada pagina
 function func2() {
 
     let arrLocation = window.location.href.split("/");
     switch (arrLocation[arrLocation.length - 1]) {
         case "clase6.html":
+            loadCombo();
+            break;
+        case "clase7y8.html":
             loadCombo();
             break;
         case "1aEntregaProyFinal.html":
@@ -47,5 +50,12 @@ function addLoadEvent(func) {
 addLoadEvent(fMainMenu);
 addLoadEvent(func2);
 addLoadEvent(function () {
+
+    if (isDark) {
+        enableDarkTheme();
+    } else {
+        disableDarkTheme();
+    }
+
     //document.body.style.backgroundColor = '#EFDF95';
 })

@@ -9,14 +9,15 @@
 /* Page Objects */
 .navbar {
     transition: all 0.26s;
-    background-color: rgba(255, 255, 255, 0.5);
+    /*background: rgba(130, 130, 130, 0.5);*/
+    background-color: rgba(130, 130, 130, 0.5);
     opacity: 0.89;
     filter: (opacity=89);
     text-align: center;
 }
 
 .navbar .nav-link {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(130, 130, 130, 0.7);
 }
 
 .navbar-brand {
@@ -30,12 +31,12 @@
 
 .navbar .nav-link:hover,
 .navbar .nav-link:focus {
-    color: rgba(106, 66, 172, 0.7);
+    color: rgba(67, 10, 158, 0.7);
     text-decoration: none;
 }
 
 .navbar .navbar-brand {
-    color: rgba(255, 255, 255, 0.7);
+    /*color: rgba(255, 255, 255, 0.7);*/
 }
 
 
@@ -56,7 +57,7 @@
 }
 
 .navbar.active .navbar-brand {
-    color: #555;
+    color: rgb(255, 255, 255);
 }
 
 
@@ -68,12 +69,12 @@
 
     .navbar .navbar-brand,
     .navbar .nav-link {
-        color: rgb(0, 0, 0);
+        color: #555;
     }
 }
 
 html {
-    color: white;
+    /*color: white;*/
     background-color: black;
 
 }
@@ -88,14 +89,14 @@ body {
     min-height: 100%;
     display: grid;
     grid-template-rows: 1fr auto;
-    color: rgb(13, 13, 13);
+    color: white;
     background-color: rgba(26, 26, 26, 0.89);
-    background-image: linear-gradient(130deg, #8b9ef1 0%, #2e0049 100%);
+    background-image: linear-gradient(135deg, #160129 0%, #2e0049 100%);
 
 }
 
 .jumbotron {
-    background-color: rgba(234, 234, 234, 0.39);
+    background-color: rgba(26, 26, 26, 0.78);
 }
 
 .footer {

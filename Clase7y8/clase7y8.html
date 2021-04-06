@@ -39,7 +39,7 @@
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="favicon.ico">
 
-    <title>JS:Clase #6</title>
+    <title>JS:Clase #7 y #8</title>
 </head>
 
 <body>
@@ -58,7 +58,8 @@
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse pl-5" id="navbarNavDropdown">
+            <div class="collapse navbar-collapse pl-5" style="padding-left: 50rem; margin-left: 2.6em;"
+                id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="../index.html"><i class="fa fa-home"></i></a>
@@ -79,8 +80,8 @@
                             <a class="dropdown-item" href="../Clase4a/clase4a.html">Clase 4 - Simulador interactivo</a>
                             <a class="dropdown-item" href="../Clase4b/clase4b.html">Clase 4 - Funciones Relacionadas</a>
                             <a class="dropdown-item" href="../Clase5/clase5.html">Clase 5 - Objetos</a>
-                            <a class="dropdown-item active" href="clase6.html">Clase 6 - Arrays</a>
-                            <a class="dropdown-item" href="../Clase7y8/clase7y8.html">Clase 7 y 8 - Storage, JSON & DOM</a>                            
+                            <a class="dropdown-item" href="../Clase6/clase6.html">Clase 6 - Arrays</a>
+                            <a class="dropdown-item active" href="clase7y8.html">Clase 7 y 8 - Storage, JSON & DOM</a>
                             <a class="dropdown-item" href="#">Clase ...</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="../1aEntregaProyFinal/1aEntregaProyFinal.html">Proyecto Final
@@ -112,32 +113,24 @@
         <div class="jumbotron text-center topPagina">
         </div>
         <div class="jumbotron text-center bgTopText" style="top: -5em;">
-            <h2>Curso JavaScript. Clase #6. Arrays</h1>
+            <h2>Curso JavaScript. Clase #7 y #8. Storage + JSON + DOM</h1>
         </div>
 
         <div class="jumbotron text-center " style="margin-bottom:0; margin-top: -13em;">
             <p>
                 <script>
-                    const TXTBIENVENIDO = "Bienvenido a la clase 6.";
+                    const TXTBIENVENIDO = "Bienvenido al Proyecto Final / Entrega #1.";
                     console.log(TXTBIENVENIDO);
                 </script>
             </p>
 
-            <h1><i class="fas fa-table"></i>&nbsp;Arrays</h1>
+            <h1><i class="fas fa-database fa-2x"></i>&nbsp;Storage + <i class="far fa-file-code fa-2x"></i>&nbsp;JSON + <i class="fas fa-tags fa-2x"></i>&nbsp;DOM</h1>
             <h6>
                 &nbsp;
 
                 <ul style="list-style-type: none;">
                     <p style="text-align: left;">Objetivo: </p>
-                    <li style="padding-left: 2.6em;  text-align: left; list-style-type: none; margin: 0;">Calcular costo
-                        total de productos y/o servicios seleccionados por el usuario.</li>
-                    <li style="padding-left: 2.6em;  text-align: left; list-style-type: none; margin: 0;">Mostrar el
-                        Total general con el IVA calculado en un diálogo MODAL</li>
-                    <li style="padding-left: 2.6em;  text-align: left; list-style-type: none; margin: 0;">Se carga el
-                        combo de "Tipo" (de item de facturación) con un Array.</li>
-                    <li style="padding-left: 2.6em;  text-align: left; list-style-type: none; margin: 0;">DESAFIO
-                        COMPLEMENTARIO: Se ordena
-                        tabla por valores (mayor a menor, y menor a mayor)</li>
+                    <li style="padding-left: 2.6em;  text-align: left; list-style-type: none; margin: 0;">Se agrega al proyecto el botón "modo noche" que almacena un JSON en STORAGE y se manipula DOM según "modo  noche" o "modo día"</li>
                 </ul>
             </h6>
 
@@ -154,7 +147,7 @@
                                 <td class="tituloTabla">Precio</td>
                                 <td class="tituloTabla">Total
                                 <td>
-                                    <button type="button" class="btn btn-outline-primary btn-sm"
+                                    <button type="button" class="btn btn-outline-primary btn-sm" id="btnSort"
                                         onclick="sortPrice()"><i class="fas fa-sort"></i></button></td>
 
                                 </td>
@@ -291,13 +284,43 @@
                         <p>
                             <div class="row">
                                 <div class="col-sm-2 text-center">
-                                    <i class="fas fa-equals"></i>
+                                    <i class="fa fa-calculator fa-2x" aria-hidden="true"></i>
                                 </div>
                                 <div class="col-sm-10">
                                     <h6>
                                         <div id="Resultado" style="display: none;">
                                             <p>Los Totales Son:</p>
-                                            <p id="pResultados">
+                                            <p id="pResultados"> </p>
+
+                                            <div class="divTable paleBlueRows">
+                                                <div class="divTableHeading">
+                                                    <div class="divTableRow">
+                                                        <div class="divTableHead" id="head1">Descripción</div>
+                                                        <div class="divTableHead" id="head2">Cantidad</div>
+                                                    </div>
+                                                </div>
+                                                <div class="divTableBody">
+                                                    <div class="divTableRow">
+                                                        <div class="divTableCell" id="cell1_1">Total Cantidades</div>
+                                                        <div class="divTableCell" id="totCant"></div>
+                                                    </div>
+                                                    <div class="divTableRow">
+                                                        <div class="divTableCell" id="cell1_2">Total Precio</div>
+                                                        <div class="divTableCell" id="totPrecio"></div>
+                                                    </div>
+                                                    <div class="divTableRow">
+                                                        <div class="divTableCell" id="cell1_3">Total IVA 21%</div>
+                                                        <div class="divTableCell" id="totIVA"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="divTableFoot tableFootStyle">
+                                                    <div class="divTableRow">
+                                                        <div class="divTableCell" id="Total General">Total General</div>
+                                                        <div class="divTableCell" id="totGeneral"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </h6>
                                 </div>

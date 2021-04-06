@@ -20,6 +20,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link id="dark-theme-style" rel="stylesheet" />
 
     <!-- FavIcon Support -->
     <!-- Browsers -->
@@ -45,9 +46,69 @@
 
     <!-- Navbar-->
     <header class="header">
-        <header class="header">
-            <div menu-html="mainNav.html"></div>
-    \    </header>
+        <!--<div menu-html="mainNav.html"></div>-->
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../img/1024px-Unofficial_JavaScript_logo_2.svg.png" width="30" height="30"
+                    class="d-inline-block align-top" alt="">
+                Curso Javascript
+            </a>
+        
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse pl-5 " style="padding-left: 50rem; margin-left: 2.6em;" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html"><i class="fa fa-home"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html"><i class="fas fa-info-circle">&nbsp</i> Acerca
+                            de...</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-university"></i> Clases
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item " href="Clase1/clase1.html">Clase 1</a>
+                            <a class="dropdown-item " href="Clase2/clase2.html">Clase 2</a>
+                            <a class="dropdown-item " href="Clase3/clase3.html">Clase 3</a>
+                            <a class="dropdown-item " href="Clase4a/clase4a.html">Clase 4 - Simulador interactivo</a>
+                            <a class="dropdown-item " href="Clase4b/clase4b.html">Clase 4 - Funciones Relacionadas</a>
+                            <a class="dropdown-item " href="Clase5/clase5.html">Clase 5 - Objetos</a>
+                            <a class="dropdown-item " href="Clase6/clase6.html">Clase 6 - Arrays</a>
+                            <a class="dropdown-item" href="../Clase7y8/clase7y8.html">Clase 7 y 8 - Storage, JSON & DOM</a>                            
+                            <a class="dropdown-item " href="#">Clase ...</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item " href="1aEntregaProyFinal/1aEntregaProyFinal.html">Proyecto Final -
+                                Primera
+                                Entrega</a>
+                            <a class="dropdown-item" href="#">Workshop 1</a>
+                            <a class="dropdown-item" href="#">Workshop 2</a>
+                        </div>
+                    </li>
+                </ul>
+                <ul>
+                    <form class="form-inline mx-auto" style="width: 390px;">
+                        <input class="form-control mr-sm-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"
+                                aria-hidden="true">&nbsp</i>Buscar</button>
+                    </form>
+                </ul>
+            </div>
+            <ul class="navbar-nav" id="btnToggle">
+                <li class="nav-item">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-outline-dark btn-sm" type="button" id="theme-toggler"
+                            onclick="toggleTheme()"></button>
+                    </div>
+                </li>
+        
+            </ul>
+        </nav>
     </header>
 
     <div class="container">
