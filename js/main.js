@@ -24,6 +24,12 @@ function func2() {
         case "clase7y8.html":
             loadCombo();
             break;
+        case "clase9.html":
+            loadCombo();
+            autocomplete(document.getElementById("myInput"), countries);
+            addElementKeyHandler();
+            addSortKeyHandler();
+            break;
         case "1aEntregaProyFinal.html":
             loadCombo();
             break;
