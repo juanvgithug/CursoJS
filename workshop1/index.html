@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Carrito</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/custom.css">
+
+</head>
+
+<body>
+	<header id="header" class="header">
+		<div class="container">
+			<div class="row">
+				<div class="four columns">
+					<h2>Tienda online</h2>
+				</div>
+				<div class="two columns u-pull-right">
+					<ul>
+						<li class="submenu">
+							<img src="img/cart.png" id="img-carrito">
+							<div id="carrito">
+								<table id="lista-carrito" class="u-full-width">
+									<thead>
+										<tr>
+											<th>Imagen</th>
+											<th>Nombre</th>
+											<th>Precio</th>
+											<th>Cantidad</th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody></tbody>
+								</table>
+
+								<a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+
+
+	<div id="hero">
+		<div class="container">
+			<div class="row">
+				<div class="six columns">
+					<div class="contenido-hero">
+						<h2>Buscar un producto</h2>
+						<form id="formulario" action="">
+							<input type="text" class="u-full-width" id="buscador"
+								placeholder="Ingresa lo que quieres buscar">
+							<input class="submit-buscador" type="submit" value="Buscar">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<h1 id="encabezado" class="encabezado">Insumos de computacion</h1>
+	<div id="lista-productos" class="container">
+
+
+		<div class="card">
+
+			<img src="img/producto1.jpg" class="imagen-producto u-full-width">
+
+			<div class="info-card">
+				<h4>Motherboard</h4>
+				<p>Juan Pedro</p>
+				<img src="img/estrellas.png">
+				<p class="precio">$20000 <span class="u-pull-right ">$15000</span></p>
+				<a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar
+					Al Carrito</a>
+			</div>
+		</div> <!-- .card-->
+
+
+		<div class="card">
+			<img src="img/producto2.jpg" class="imagen-producto u-full-width">
+			<div class="info-card">
+				<h4>Teclado</h4>
+				<p>Juan Pedro</p>
+				<img src="img/estrellas.png">
+				<p class="precio">$18000 <span class="u-pull-right ">$12000</span></p>
+				<a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="2">Agregar
+					Al Carrito</a>
+			</div>
+		</div>
+
+		<div class="card">
+			<img src="img/producto3.jpg" class="imagen-producto u-full-width">
+			<div class="info-card">
+				<h4>Gabinete</h4>
+				<p>Juan Pedro</p>
+				<img src="img/estrellas.png">
+				<p class="precio">$25000 <span class="u-pull-right ">$18000</span></p>
+				<a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="3">Agregar
+					Al Carrito</a>
+			</div>
+		</div> <!-- .card -->
+
+
+		<div class="card">
+			<img src="img/producto4.jpg" class="imagen-producto u-full-width">
+			<div class="info-card">
+				<h4>Monitor</h4>
+				<p>Juan Pedro</p>
+				<img src="img/estrellas.png">
+				<p class="precio">$20000 <span class="u-pull-right ">$15000</span></p>
+				<a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="4">Agregar
+					Al Carrito</a>
+			</div>
+		</div>
+
+
+		<div class="card">
+			<img src="img/producto5.jpg" class="imagen-producto u-full-width">
+			<div class="info-card">
+				<h4>Placa de Video</h4>
+				<p>Juan Pedro</p>
+				<img src="img/estrellas.png">
+				<p class="precio">$30000 <span class="u-pull-right ">$25000</span></p>
+				<a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="5">Agregar
+					Al Carrito</a>
+			</div>
+		</div>
+
+
+		<div class="card">
+			<img src="img/producto1.jpg" class="imagen-producto u-full-width">
+			<div class="info-card">
+				<h4>Motherboard</h4>
+				<p>Juan Pedro</p>
+				<img src="img/estrellas.png">
+				<p class="precio">$18000 <span class="u-pull-right ">$12000</span></p>
+				<a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="6">Agregar
+					Al Carrito</a>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="js/productos.js"></script>
+	<script src="js/app.js"></script>
+</body>
+
+</html>

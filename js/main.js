@@ -33,6 +33,12 @@ function func2() {
         case "1aEntregaProyFinal.html":
             loadCombo();
             break;
+        case "2aEntregaProyFinal.html":
+            loadCombo();
+            autocomplete(document.getElementById("myInput"), countries);
+            addElementKeyHandler();
+            addSortKeyHandler();
+            break;
         default:
 
     }

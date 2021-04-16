@@ -1,0 +1,189 @@
+html {
+    font-size: 62.5%;
+}
+body {
+    background-color: #f5f3f3
+}
+h1 {
+    text-align: center;
+}
+h2 {
+    font-size: 3rem;
+}
+h4 {
+    font-size: 16px;
+    font-weight: 700;
+}
+header {
+    padding: 20px 0 0 0;
+    background: white;
+    text-align: center;
+}
+@media (min-width: 750px) {
+    header {
+        text-align: left;
+    }
+}
+.borrar-producto {
+    background-color: red;
+    border-radius: 50%;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+}
+#hero {
+    background-image:url(../img/hero.webp);
+    height: 350px;
+	background-size: cover;
+	background-position: center center;
+}
+
+.imagen-producto {
+	max-width: 100%
+}
+
+#encabezado {
+    margin: 30px 0;
+}
+.submenu {
+    position: relative;
+}
+
+.submenu #carrito{
+    display: none;
+}
+.submenu:hover #carrito{
+    display: block;
+    position: absolute;
+    right:0;
+
+    top:100%;
+    z-index: 1;
+    background-color: white;
+    padding: 20px;
+    /* min-height: 400px; */
+    min-width: 300px;
+}
+tbody img {
+	width: 100%;
+}
+.vacio {
+    padding: 10px;
+    background-color: crimson;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+}
+.contenido-hero {
+    margin-top: 80px;
+    color: white;
+}
+.contenido-hero form {
+    position: relative;
+    margin-bottom: 0;
+}
+.contenido-hero form #buscador {
+    height: 50px;
+    margin-bottom: 0;
+}
+.contenido-hero form .submit-buscador {
+    /* position: absolute; */
+    /* right:0; */
+    /* top:0; */
+	color: white;
+	background-color: #e44e52;
+	border-color: #e44e52;
+    height: 100%;
+	margin-top: 1rem;
+	padding: .25rem 2rem;
+    /* display: block; */
+    /* text-indent: -9999px; */
+    /* width: 50px; */
+    /* background-image: url(../img/lupa.png); */
+    /* background-position: right center;
+    background-repeat: no-repeat;
+    border:none; */
+}
+
+
+.barra p {
+    margin:0;
+    color: white;
+}
+.icono {
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 60px;
+    background-size: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+@media (min-width: 750px) {
+    .icono {
+        margin-bottom:0;
+    }
+}
+
+#lista-productos .row {
+    margin-bottom:20px;
+}
+
+/* #lista-productos {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 2rem;
+} */
+
+
+#lista-productos {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+	grid-gap: 2rem;
+	justify-content: center;
+}
+
+/* img.imagen-producto.u-full-width, */
+.imagen-prod {
+	max-height: 150px;
+	overflow: hidden;
+}
+
+.agregar-carrito {
+    margin:10px 0;
+}
+
+#buscador {
+	color: black;
+}
+
+.card {
+    border: 1px solid #e1e1e1;
+    background: white;
+}
+.info-card  {
+    padding: 10px 20px;
+}
+a.agregar-carrito {
+	background-color: #e48a4e!important;
+	border-color: #e48a4e!important;
+}
+
+.info-card p, 
+.card h4 {
+    margin-bottom: 5px;
+}
+.info-card .precio {
+    text-decoration: line-through;
+    font-size: 18px;
+    margin-top: 10px;
+}
+.info-card .precio span {
+    font-weight: 700;
+    font-size: 22px;
+}
+
