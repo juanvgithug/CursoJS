@@ -82,9 +82,7 @@ function model() {
 var mymodel = new model();
 
 //DOM READY: add functions to table form buttons
-$(function () {
-
-    say("DOM Ready.");
+$(function () { //$(document).ready()
 
     $("body").on("click", ".btnDelete", function () {
         var id = $(this).data('id');
@@ -163,9 +161,9 @@ $(function () {
         }
     });
 
+    //add editable table stuff here
 
-
-})
+});
 
 //draw table from array
 function draw() {
@@ -344,7 +342,12 @@ function addElementKeyHandler() {
     x = document.getElementById("cliente");
     x.addEventListener("keyup", function (event) {
         if (event.key == 'Enter') {
-            document.getElementById("myInput").focus();
+            if (document.querySelector("#cliente").value === "") /* value unselected*/ {
+                say ("Value unselected")
+                openCombo("cliente");
+            } else {
+                document.getElementById("myInput").focus();
+            }
         }
     });
 
@@ -515,4 +518,13 @@ function loadCharts() { // HTML To JSON Script
     console.log("Values: " + values);
     var chart = BuildChart(labels, values, "Cantidad de unidades por país");
 
+}
+
+function openCombo(comboBox) {
+    say (comboBox);
+    var dropdown = document.getElementById(comboBox);
+    var event;
+    event = document.createEvent('MouseEvents');
+    event.initMouseEvent('mousedown', true, true, window);
+    dropdown.dispatchEvent(event);
 }

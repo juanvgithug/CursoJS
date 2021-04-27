@@ -6,9 +6,9 @@ Camada: 14365
 /* Constantes y Variables */
 var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua &amp; Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia &amp; Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central Arfrican Republic", "Chad", "Chile", "China", "Colombia", "Congo", "Cook Islands", "Costa Rica", "Cote D Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands", "Faroe Islands", "Fiji", "Finland", "France", "French Polynesia", "French West Indies", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauro", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russia", "Rwanda", "Saint Pierre &amp; Miquelon", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "St Kitts &amp; Nevis", "St Lucia", "St Vincent", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor L'Este", "Togo", "Tonga", "Trinidad &amp; Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks &amp; Caicos", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Virgin Islands (US)", "Yemen", "Zambia", "Zimbabwe"];
 var lastSort = 0;
-/* 2da Entrega Proy Final */
 var myTableArray = [];
 var myChart;
+var dataRow = "";
 
 function funcCloseGrandTotal() {
     $("#modal0").modal('hide');
@@ -82,9 +82,7 @@ function model() {
 var mymodel = new model();
 
 //DOM READY: add functions to table form buttons
-$(function () {
-
-    say("DOM Ready.");
+$(function () { //$(document).ready()
 
     $("body").on("click", ".btnDelete", function () {
         var id = $(this).data('id');
@@ -111,14 +109,38 @@ $(function () {
                 countryName: 'asc'
             });
             draw();
+            flashRow(dataRow);
         }
     });
 
     $('#clearList').click(function () {
-        if (validarDatos() == true) {
-            mymodel.rows.length = 0;
-            //say(mymodel.rows[mymodel.rows.length - 1]);
-            draw();
+        $('tbody').fadeOut("fast");
+        mymodel.rows.length = 0;
+
+        var totalQuantity = 0;
+        var totalPrice = 0;
+
+        $.each(mymodel.rows, function (i, row) {
+            totalQuantity += row.Quantity;
+            totalPrice += row.Price * row.Quantity;
+            var myrow = '<tr id="DataRow' + row.rowId + '"' + '>';
+            $.each(row, function (key, value) {
+                if (key != "rowId") {
+                    myrow += '<td class="contenidoTabla">' + value + '</td>'
+                }
+            });
+            myrow += '<td><button type="button" class="btn btn-outline-danger btnDelete" data-id="' + row.rowId + '" value="X"/><i class="fa fa-trash" aria-hidden="true"></i></button></td>'
+            myrow += '<tr>'
+            $('tbody').append(myrow);
+        });
+
+        $('#totalQuantity').text(totalQuantity)
+        $('#totalPrice').text(totalPrice)
+
+        if (totalQuantity == 0 && totalPrice == 0) {
+            grayOutButtons();
+        } else {
+            enableButtons();
         }
     });
 
@@ -163,19 +185,21 @@ $(function () {
         }
     });
 
+    //add editable table stuff here
 
-
-})
+});
 
 //draw table from array
 function draw() {
+    $('tbody').fadeOut("fast");
     $('tbody').empty();
     var totalQuantity = 0;
     var totalPrice = 0;
+    dataRow = "";
     $.each(mymodel.rows, function (i, row) {
         totalQuantity += row.Quantity;
         totalPrice += row.Price * row.Quantity;
-        var myrow = '<tr>';
+        var myrow = '<tr id="DataRow' + row.rowId + '"' + '>';
         $.each(row, function (key, value) {
             if (key != "rowId") {
                 myrow += '<td class="contenidoTabla">' + value + '</td>'
@@ -185,7 +209,11 @@ function draw() {
         myrow += '<td><button type="button" class="btn btn-outline-danger btnDelete" data-id="' + row.rowId + '" value="X"/><i class="fa fa-trash" aria-hidden="true"></i></button></td>'
         myrow += '<tr>'
         $('tbody').append(myrow);
+        dataRow = "DataRow" + row.rowId;
     });
+
+    $('tbody').fadeIn("fast");
+
     $('#totalQuantity').text(totalQuantity)
     $('#totalPrice').text(totalPrice)
 
@@ -200,6 +228,19 @@ function draw() {
     select.focus();
 
 }
+
+//Flash selected rowId from list
+function flashRow(dataRow) {
+    const strSpeed = "fast";
+    //say(dataRow);
+
+    //eff1:
+    //$("#"+dataRow).fadeTo(100, 0.39, function() { $(this).fadeTo(500, 1.0); });
+    //eff2:
+    $("#" + dataRow).fadeOut(strSpeed).fadeIn(strSpeed).fadeOut(strSpeed).fadeIn(strSpeed).fadeOut(strSpeed).fadeIn(strSpeed);
+
+}
+
 
 //Fill combobox option
 function loadCombo() {
@@ -344,7 +385,12 @@ function addElementKeyHandler() {
     x = document.getElementById("cliente");
     x.addEventListener("keyup", function (event) {
         if (event.key == 'Enter') {
-            document.getElementById("myInput").focus();
+            if (document.querySelector("#cliente").value === "") /* value unselected*/ {
+                say("Value unselected")
+                openCombo("cliente");
+            } else {
+                document.getElementById("myInput").focus();
+            }
         }
     });
 
@@ -515,4 +561,13 @@ function loadCharts() { // HTML To JSON Script
     console.log("Values: " + values);
     var chart = BuildChart(labels, values, "Cantidad de unidades por país");
 
+}
+
+function openCombo(comboBox) {
+    say(comboBox);
+    var dropdown = document.getElementById(comboBox);
+    var event;
+    event = document.createEvent('MouseEvents');
+    event.initMouseEvent('mousedown', true, true, window);
+    dropdown.dispatchEvent(event);
 }

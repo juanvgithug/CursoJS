@@ -30,6 +30,18 @@ function func2() {
             addElementKeyHandler();
             addSortKeyHandler();
             break;
+        case "Clase12.html":
+            loadCombo();
+            autocomplete(document.getElementById("myInput"), countries);
+            addElementKeyHandler();
+            addSortKeyHandler();
+            break;
+        case "clase13.html":
+            loadCombo();
+            autocomplete(document.getElementById("myInput"), countries);
+            addElementKeyHandler();
+            addSortKeyHandler();
+            break;
         case "1aEntregaProyFinal.html":
             loadCombo();
             break;
@@ -46,6 +58,8 @@ function func2() {
 }
 
 //hook a OnLoad
+window.addEventListener("load", FirstLoad());
+
 function addLoadEvent(func) {
     var oldonload = window.onload;
     if (typeof window.onload != 'function') {
@@ -59,15 +73,24 @@ function addLoadEvent(func) {
         }
     }
 }
-addLoadEvent(fMainMenu);
-addLoadEvent(func2);
-addLoadEvent(function () {
+
+//
+function FirstLoad() {
+    addLoadEvent(fMainMenu);
+    addLoadEvent(func2);
+}
+
+$(function () { //$(document).ready()
+
+    say("main.js : DOM is now safe to use.");
+
 
     if (isDark) {
+        say("THEME: Make it DARK.");
         enableDarkTheme();
     } else {
         disableDarkTheme();
+        say("THEME: Let there be light.");
     }
 
-    //document.body.style.backgroundColor = '#EFDF95';
-})
+});
