@@ -364,3 +364,11 @@ input[type=submit] {
   background-color: DodgerBlue !important;
   color: #ffffff;
 }
+
+.li {
+    text-align: justify;
+}
+
+.ul {
+    text-align: justify;
+}

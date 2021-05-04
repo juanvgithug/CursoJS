@@ -42,11 +42,12 @@ function func2() {
             addElementKeyHandler();
             addSortKeyHandler();
             break;
-        case "clase14.html":
+        case "Clase14.html":
             loadCombo();
             autocomplete(document.getElementById("myInput"), countries);
             addElementKeyHandler();
             addSortKeyHandler();
+            loadCountries();
             break;
         case "1aEntregaProyFinal.html":
             loadCombo();
