@@ -7,8 +7,8 @@ Camada: 14365
 
 /* Constantes y Variables */
 const SEPARADOR = " ";
-const THEME_LIGHT = "🌞";
-const THEME_DARK = "🌙";
+const THEME_LIGHT = "<i class=\"far fa-lightbulb\"></i>"; 
+const THEME_DARK = "<i class=\"fas fa-lightbulb\"></i>"; 
 const LOCAL_STORAGE_KEY = "toggle-cursojs-theme";
 const LOCAL_META_DATA = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
 const DARK_THEME_PATH = "css/style.dark.css";

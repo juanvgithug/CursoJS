@@ -87,7 +87,7 @@ function FirstLoad() {
 
 $(function () { //$(document).ready()
 
-    say("main.js : DOM is now safe to use.");
+    //say("main.js : DOM is now safe to use.");
 
 
     if (isDark) {
