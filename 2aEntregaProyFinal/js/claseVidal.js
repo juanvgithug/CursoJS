@@ -103,7 +103,7 @@ $(function () {
                 $('#Id').val(),
                 $('#Code').val(),
                 $('#cliente').val(),
-                $('#myInput').val(),
+                $('#myAutoComplete').val(),
                 Number($('#Quantity').val()),
                 Number($('#Price').val())
             ))
@@ -344,11 +344,11 @@ function addElementKeyHandler() {
     x = document.getElementById("cliente");
     x.addEventListener("keyup", function (event) {
         if (event.key == 'Enter') {
-            document.getElementById("myInput").focus();
+            document.getElementById("myAutoComplete").focus();
         }
     });
 
-    x = document.getElementById("myInput");
+    x = document.getElementById("myAutoComplete");
     x.addEventListener("keyup", function (event) {
         if (event.key == 'Enter') {
             document.getElementById("Quantity").focus();

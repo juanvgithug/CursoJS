@@ -101,7 +101,7 @@ $(function () { //$(document).ready()
                 $('#Id').val(),
                 $('#Code').val(),
                 $('#cliente').val(),
-                $('#myInput').val(),
+                $('#myAutoComplete').val(),
                 Number($('#Quantity').val()),
                 Number($('#Price').val())
             ))
@@ -185,8 +185,11 @@ $(function () { //$(document).ready()
         }
     });
 
-    //add editable table stuff here
-
+    $(".dropdown-menu li a").click(function(){
+        document.preventDefault();
+        $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+        $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+      });
 });
 
 //draw table from array
@@ -386,15 +389,15 @@ function addElementKeyHandler() {
     x.addEventListener("keyup", function (event) {
         if (event.key == 'Enter') {
             if (document.querySelector("#cliente").value === "") /* value unselected*/ {
-                say("Value unselected")
+                //say("Value unselected")
                 openCombo("cliente");
             } else {
-                document.getElementById("myInput").focus();
+                document.getElementById("myAutoComplete").focus();
             }
         }
     });
 
-    x = document.getElementById("myInput");
+    x = document.getElementById("myAutoComplete");
     x.addEventListener("keyup", function (event) {
         if (event.key == 'Enter') {
             document.getElementById("Quantity").focus();
@@ -563,13 +566,10 @@ function loadCharts() { // HTML To JSON Script
 
 }
 
+//abrir combo
 function openCombo(comboBox) {
-    say(comboBox);
-    var dropdown = document.getElementById(comboBox);
-    var event;
-    event = document.createEvent('MouseEvents');
-    event.initMouseEvent('mousedown', true, true, window);
-    dropdown.dispatchEvent(event);
+
+    $('.dropdown-toggle').dropdown();
 }
 
 function loadCountries() {

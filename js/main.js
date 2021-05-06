@@ -26,25 +26,25 @@ function func2() {
             break;
         case "clase9.html":
             loadCombo();
-            autocomplete(document.getElementById("myInput"), countries);
+            autocomplete(document.getElementById("myAutoComplete"), countries);
             addElementKeyHandler();
             addSortKeyHandler();
             break;
         case "Clase12.html":
             loadCombo();
-            autocomplete(document.getElementById("myInput"), countries);
+            autocomplete(document.getElementById("myAutoComplete"), countries);
             addElementKeyHandler();
             addSortKeyHandler();
             break;
         case "clase13.html":
             loadCombo();
-            autocomplete(document.getElementById("myInput"), countries);
+            autocomplete(document.getElementById("myAutoComplete"), countries);
             addElementKeyHandler();
             addSortKeyHandler();
             break;
         case "Clase14.html":
             loadCombo();
-            autocomplete(document.getElementById("myInput"), countries);
+            autocomplete(document.getElementById("myAutoComplete"), countries);
             addElementKeyHandler();
             addSortKeyHandler();
             loadCountries();
@@ -54,7 +54,7 @@ function func2() {
             break;
         case "2aEntregaProyFinal.html":
             loadCombo();
-            autocomplete(document.getElementById("myInput"), countries);
+            autocomplete(document.getElementById("myAutoComplete"), countries);
             addElementKeyHandler();
             addSortKeyHandler();
             break;
@@ -88,8 +88,6 @@ function FirstLoad() {
 $(function () { //$(document).ready()
 
     //say("main.js : DOM is now safe to use.");
-
-
     if (isDark) {
         say("THEME: Make it DARK.");
         enableDarkTheme();

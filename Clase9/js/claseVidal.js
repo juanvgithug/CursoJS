@@ -89,7 +89,7 @@ $(document).ready(function () {
                 $('#Id').val(),
                 $('#Code').val(),
                 $('#cliente').val(),
-                $('#myInput').val(),
+                $('#myAutoComplete').val(),
                 Number($('#Quantity').val()),
                 Number($('#Price').val())
             ))
