@@ -58,6 +58,13 @@ function func2() {
             addElementKeyHandler();
             addSortKeyHandler();
             break;
+        case "ProyectoFinal.html":
+            loadCombo();
+            autocomplete(document.getElementById("myAutoComplete"), countries);
+            addElementKeyHandler();
+            addSortKeyHandler();
+            loadCountries();
+            break;
         default:
     }
 }

@@ -18,6 +18,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- SweetAlert -->
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.11/dist/sweetalert2.all.min.js"></script>
+    
     <!-- Main CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <link id="dark-theme-style" rel="stylesheet" />
@@ -39,14 +43,16 @@
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="favicon.ico">
 
-    <title>JS:Proyecto Final | Entrega #1</title>
+    <title>Proyecto Final</title>
 </head>
 
 <body>
 
     <!-- Navbar-->
     <header class="header">
+        <div id="menu-html">
 
+        </div>
         <nav class="navbar navbar-expand-lg navbar-light sticky-top">
 
             <a class="navbar-brand" href="../index.html">
@@ -75,8 +81,8 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="../Clase1/clase1.html">Clase 1</a>
-                            <a class="dropdown-item " href="../Clase2/clase2.html">Clase 2</a>
-                            <a class="dropdown-item " href="../Clase3/clase3.html">Clase 3</a>
+                            <a class="dropdown-item" href="../Clase2/clase2.html">Clase 2</a>
+                            <a class="dropdown-item" href="../Clase3/clase3.html">Clase 3</a>
                             <a class="dropdown-item" href="../Clase4a/clase4a.html">Clase 4 - Simulador interactivo</a>
                             <a class="dropdown-item" href="../Clase4b/clase4b.html">Clase 4 - Funciones Relacionadas</a>
                             <a class="dropdown-item" href="../Clase5/clase5.html">Clase 5 - Objetos</a>
@@ -84,18 +90,19 @@
                             <a class="dropdown-item" href="../Clase7y8/clase7y8.html">Clase 7 y 8 - Storage, JSON &
                                 DOM</a>
                             <a class="dropdown-item" href="../Clase9/clase9.html">Clase 9 Eventos</a>
-                            <a class="dropdown-item" href="../Clase12/Clase12.html">Clase 12 jQuery: selectores y
+                            <a class="dropdown-item" href="../Clase12/clase12.html">Clase 12 jQuery: selectores y
                                 eventos</a>
-                            <a class="dropdown-item " href="../Clase13/clase13.html">Clase 13 - Animaciones</a>
-                            <a class="dropdown-item" href="../Clase14/Clase14.html">Clase 14 - AJAX + jQuery</a>                                                        
+                            <a class="dropdown-item" href="../Clase13/clase13.html">Clase 13 - Animaciones</a>
+                            <a class="dropdown-item" href="../Clase14/Clase14.html">Clase 14 - AJAX + jQuery</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item active" href="1aEntregaProyFinal.html">Proyecto Final - Primera
-                                Entrega</a>
-                            <a class="dropdown-item" href="../2aEntregaProyFinal/2aEntregaProyFinal.html">Proyecto Final
+                            <a class="dropdown-item" href="../1aEntregaProyFinal/1aEntregaProyFinal.html">Proyecto Final
+                                - Primera Entrega</a>
+                            <a class="dropdown-item " href="../2aEntregaProyFinal/2aEntregaProyFinal.html">Proyecto
+                                Final
                                 - Segunda Entrega</a>
                             <a class="dropdown-item" href="../workshop1/index.html">Workshop 1</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item " href="ProyectoFinal.html">Proyecto Final</a>
+                            <a class="dropdown-item active" href="ProyectoFinal.html">Proyecto Final</a>
                         </div>
                     </li>
                 </ul>
@@ -116,55 +123,61 @@
         <div class="jumbotron text-center topPagina">
         </div>
         <div class="jumbotron text-center bgTopText" style="top: -5em;">
-            <h2>Curso JavaScript. Proyecto Final - 1a entrega</h1>
+            <h2>Curso JavaScript. Proyecto Final</h1>
         </div>
 
         <div class="jumbotron text-center " style="margin-bottom:0; margin-top: -13em;">
             <p>
                 <script>
-                    const TXTBIENVENIDO = "Bienvenido al Proyecto Final / Entrega #1.";
+                    const TXTBIENVENIDO = "Bienvenido al Proyecto Final.";
                     console.log(TXTBIENVENIDO);
                 </script>
             </p>
 
-            <h1><i class="fas fa-user-graduate"></i>&nbsp;Proyecto Final</h1>
+            <h1><i class="fas fa-graduation-cap"></i>&nbsp;Proyecto Final</h1>
             <h6>
                 &nbsp;
 
                 <ul style="list-style-type: none;">
-                    <p style="text-align: left;">Objetivo: </p>
-                    <li style="padding-left: 2.6em;  text-align: left; list-style-type: none; margin: 0;">Crear una
-                        lista interactiva para sitio web (intranet) con detalle de productos/servicios y cálculo de
-                        totales.</li>
-                    <li style="padding-left: 2.6em;  text-align: left; list-style-type: none; margin: 0;">Mostrar el
-                        Total general con el IVA calculado en un diálogo MODAL</li>
+                    <p style="text-align: justify;">Objetivo: </p>
+                    <li style="padding-left: 2.6em;  text-align: justify; list-style-type: none; margin: 0;">
+                        <strong>General:</strong> Crear un listado de ventas de productos por país, valorizado que
+                        muestre un gráfico agrupando cantidades por país.</li>
+                    <li style="padding-left: 2.6em;  text-align: justify; list-style-type: none; margin: 0;">
+                        <strong>JQuery + DOM + Storage + Arrays + Objetos:</strong> Se utilizan para ciertas funciones.
+                    </li>
+                    <li style="padding-left: 2.6em;  text-align: justify; list-style-type: none; margin: 0;">
+                        <strong>Eventos:</strong> Se utilizan eventos para manejar la lista.</li>
+                    <li style="padding-left: 2.6em;  text-align: justify; list-style-type: none; margin: 0;">
+                        <strong>Animaciones:</strong> Incorporadas a lista.</li>
+                    <li style="padding-left: 2.6em;  text-align: justify; list-style-type: none; margin: 0;">
+                        <strong>AJAX + jQuery:</strong> Se utiliza archivo JSON estático para listado de países.</li>
                 </ul>
             </h6>
 
             <div class="jumbotron"
                 style='margin-bottom:13px;background-image: url("/img/gray_back.jpg");height: max-content;background-size: contain;background-blend-mode: soft-light;margin-top: 39px; opacity: 89%;background-repeat:repeat ;min-height: 600px; font-size:.78em;padding-top: 0px;'>
                 <h7>
-                    <table class="table table-condensed">
+                    <table class="table table-condensed" id="prodTable">
                         <thead>
                             <tr>
                                 <td class="tituloTabla">Código #</td>
                                 <td class="tituloTabla">Nombre</td>
                                 <td class="tituloTabla">Tipo</td>
+                                <td class="tituloTabla">Pais</td>
                                 <td class="tituloTabla">Cantidad</td>
                                 <td class="tituloTabla">Precio</td>
                                 <td class="tituloTabla">Total
                                 <td>
                                     <button type="button" class="btn btn-outline-primary btn-sm" id="btnSort"
                                         onclick="sortPrice()"><i class="fas fa-sort"></i></button></td>
-
                                 </td>
-
                                 <td class="tituloTabla">&nbsp; </td>
                             </tr>
                         </thead>
                         <tbody>
 
-                        </tbody>
+                        </tbody id="tblProd">
                         <tfoot>
                             <tr>
                                 <td colspan=7 style="text-align: left;" class="tituloTabla">Total Cantidad :
@@ -176,7 +189,6 @@
                             </tr>
                         </tfoot>
                     </table>
-
                     <form class="form-inline ">
                         <div class="input-group has-validation h7">
                             <label for="id">Código :</label>
@@ -207,6 +219,20 @@
                             </select>
                         </div>
                         &nbsp;
+                        <div class="input-group has-validation h7">
+                            <label for="myAutoComplete">Pais :</label>
+
+                            <div class="input-group-prepend ">
+                                <span class="input-group-text h7"
+                                    style="padding-top: 0.1875rem;padding-bottom: 0.1875rem;"><i
+                                        class="fas fa-globe-americas"></i></span>
+                            </div>
+                            <input type="text" class="form-control form-control-sm  h7" id="myAutoComplete"
+                                style="max-width: 89px;" name="myAutoComplete" placeholder="Pais" required>
+                            <div class="autocomplete" style="width: 1px;">
+                            </div>
+                        </div>
+                        &nbsp;
                         <div class="input-group h7">
                             <label for="Quantity">Cantidad :</label>
                             <div class="input-group-prepend ">
@@ -234,7 +260,8 @@
                         &nbsp;
                         &nbsp;
                         &nbsp;
-                        <button type="button" class="btn btn-outline-primary h7" id="add">
+                        <button type="button" class="btn btn-outline-primary h7" id="add" data-toggle="tooltip"
+                            data-placement="bottom" title="Presione ENTER para agregar">
                             <i class="fas fa-plus"></i>&nbsp;Agregar
                         </button>
 
@@ -243,11 +270,28 @@
                     <br>
                     &nbsp;
                     &nbsp;
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-success h7" id="grandTotal">
+                                    <i class="fas fa-calculator"></i>&nbsp;Total General
+                                </button>
 
-                    <button type="button" class="btn btn-success h7" id="grandTotal">
-                        <i class="fas fa-calculator"></i>&nbsp;Total General
-                    </button>
+                            </div>
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-danger h7" id="clearList">
+                                    <i class="fas fa-backspace"></i>&nbsp;Borrar Todo
+                                </button>
 
+                            </div>
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-info h7" id="btnGraph">
+                                    <i class="far fa-chart-bar"></i>&nbsp;Mostrar Gráficos
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
                 </h7>
             </div>
 
@@ -344,8 +388,53 @@
             </div>
         </div>
 
+
+        <!-- Modal1 -->
+        <div class="modal fade" id="modal1" data-backdrop="static" data-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true" style="width: 100%; ">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                <div class=" modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Gráficos</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            <div class="row">
+                                <div class="col-sm-2 text-center">
+                                    <i class="fa fa-calculator fa-2x" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-sm-10">
+                                    <h6>
+                                        <div id="Resultado" style="display: none;">
+                                            <p>Los Totales Son:</p>
+                                            <p id="pResultados"> </p>
+                                        </div>
+                                    </h6>
+                                    <div class="chart" style="position: relative; height:50vh; width:39vw">
+                                        <canvas id="myChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" onclick="funcCloseCharts()" data-dismiss="modal1"
+                            id="closeGrandTotal"></i>&nbsp;
+                            Cerrar <i class="fas fa-times"></i></button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <!-- Scripting -->
+    <!-- Graphing -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom -->
     <script src="../js/tools.js"></script>
     <script src="js/claseVidal.js"></script>
     <script src="../js/main.js"></script>
